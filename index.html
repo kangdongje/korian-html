@@ -511,9 +511,9 @@
                 <a href="https://www.instagram.com/korian_artisan?igsh=d2xsazV6cDRvanpk" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Instagramを見る</a>
             </div>
             <div class="language-buttons" style="margin-top: 2rem; text-align: center;">
-              <button class="lang-btn" onclick="changeLanguage('/ko.html')">🇰🇷</button>
-              <button class="lang-btn" onclick="changeLanguage('/en.html')">🇺🇸</button>
-              <button class="lang-btn" onclick="changeLanguage('/zh.html')">🇨🇳</button>
+              <button class="lang-btn" onclick="changeLanguage('ko.html')">🇰🇷</button>
+              <button class="lang-btn" onclick="changeLanguage('en.html')">🇺🇸</button>
+              <button class="lang-btn" onclick="changeLanguage('zh.html')">🇨🇳</button>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -744,9 +744,11 @@
         document.head.appendChild(style);
     </script>
 </body>
+</body>
 <script>
-  function changeLanguage(url) {
-    window.location.href = window.location.origin + url;
+  function changeLanguage(filename) {
+    const baseUrl = window.location.origin;
+    window.location.href = `${baseUrl}/${filename}`;
   }
 </script>
 </html>
