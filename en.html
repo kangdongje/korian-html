@@ -1,164 +1,750 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KORIAN - Authentic Korean Cuisine</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KORIAN - Authentic Korean Cuisine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', 'Yu Gothic', 'Meiryo', sans-serif;
-      line-height: 1.6;
-      background-color: #000;
-      color: #fff;
-      overflow-x: hidden;
-    }
+        body {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', 'Yu Gothic', 'Meiryo', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
 
-    a {
-      color: #00acee;
-      text-decoration: none;
-    }
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1810 50%, #8B4513 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
 
-    .hero {
-      text-align: center;
-      padding: 100px 20px 60px;
-    }
+        .hero-content {
+            z-index: 2;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
 
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
 
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 5px;
+        }
 
-    .hero a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
-    }
+        .hero-description {
+            font-size: 1.3rem;
+            color: #f0f0f0;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
 
-    .lang-select {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 6px 25px rgba(255, 107, 107, 0.6);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background: linear-gradient(180deg, #fff 0%, #f8f9fa 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            border-radius: 2px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 4rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 2;
+            color: #555;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            color: #ff6b6b;
+            font-weight: 600;
+        }
+
+        .about-image {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(45deg, #ff6b6b, #8B4513);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Menu Section */
+        .menu {
+            padding: 5rem 2rem;
+            background: #2c3e50;
+            color: white;
+        }
+
+        .menu-carousel {
+            margin-top: 4rem;
+            position: relative;
+        }
+
+        .menu-container {
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+
+        .menu-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        .menu-grid {
+            display: flex;
+            gap: 2rem;
+            padding: 1rem 0 2rem 0;
+            min-width: max-content;
+        }
+
+        .menu-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            min-width: 320px;
+            flex-shrink: 0;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            border-radius: 20px 20px 0 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .menu-item:hover::before {
+            opacity: 1;
+        }
+
+        .menu-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ff6b6b;
+        }
+
+        .menu-item p {
+            font-size: 1rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .scroll-indicator-left,
+        .scroll-indicator-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 107, 107, 0.9);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .scroll-indicator-left {
+            left: -25px;
+        }
+
+        .scroll-indicator-right {
+            right: -25px;
+        }
+
+        .scroll-indicator-left:hover,
+        .scroll-indicator-right:hover {
+            background: #ff6b6b;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .scroll-hint {
+            text-align: center;
+            margin-top: 2rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .scroll-hint-icon {
+            font-size: 1.2rem;
+            animation: slideLeft 2s ease-in-out infinite;
+        }
+
+        @keyframes slideLeft {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+        }
+
+        .menu-btn {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* Values Section */
+        .values {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .values-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .values-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .values-content p {
+            font-size: 1.2rem;
+            line-height: 2;
+            opacity: 0.95;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #ff6b6b;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .about-image {
+                height: 250px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .scroll-indicator-left,
+            .scroll-indicator-right {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .scroll-indicator-left {
+                left: -20px;
+            }
+
+            .scroll-indicator-right {
+                right: -20px;
+            }
+
+            .menu-item {
+                min-width: 280px;
+            }
+
+            .scroll-hint {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+    </style>
+    <style>
     .lang-btn {
       font-size: 2rem;
-      padding: 0.4rem 1rem;
+      margin: 0 0.5rem;
       background: transparent;
-      border: 1px solid #fff;
+      border: 2px solid rgba(255, 255, 255, 0.6);
       border-radius: 50px;
+      padding: 0.5rem 1rem;
       cursor: pointer;
+      color: white;
       transition: all 0.3s ease;
     }
 
     .lang-btn:hover {
-      background-color: #fff;
-      color: #000;
+      transform: scale(1.2);
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #ff6b6b;
     }
-
-    section {
-      padding: 60px 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    section p {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      text-align: justify;
-    }
-  ul {
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  ul li {
-    margin-bottom: 0.5rem;
-  }
-
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
-      background-color: #111;
-    }
-  </style>
+    </style>
 </head>
 <body>
-  <div class="hero">
-    <h1>KORIAN</h1>
-    <p>A Hidden Place for Adults to Savor Special Moments</p>
-    <a href="https://www.instagram.com/korian_artisan?igsh=d2xsazV6cDRvanpk" target="_blank">📸 Visit us on Instagram</a>
-    <div class="lang-select">
-      <button class="lang-btn" onclick="changeLanguage('/ko.html')">🇰🇷</button>
-      <button class="lang-btn" onclick="changeLanguage('/en.html')">🇺🇸</button>
-      <button class="lang-btn" onclick="changeLanguage('/zh.html')">🇨🇳</button>
-    </div>
-  </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-subtitle">Fusion of Korean and Japanese Flavors</div>
+            <h1 class="hero-title">KORIAN</h1>
+            <p class="hero-description">
+                — Authentic Korean Cuisine.<br>
+                No MSG ・ Gentle on the Body —
+            </p>
+            <div class="cta-buttons">
+                <a href="https://www.instagram.com/korian_artisan?igsh=d2xsazV6cDRvanpk" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Instagram</a>
+            </div>
+            <div class="language-buttons" style="margin-top: 2rem; text-align: center;">
+              <button class="lang-btn" onclick="changeLanguage('/ko.html')">🇰🇷</button>
+              <button class="lang-btn" onclick="changeLanguage('/en.html')">🇺🇸</button>
+              <button class="lang-btn" onclick="changeLanguage('/zh.html')">🇨🇳</button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div style="font-size: 2rem;">↓</div>
+            <div style="font-size: 0.9rem;">Scroll Down</div>
+        </div>
+    </section>
 
-  <section>
-    <h2>Our Philosophy</h2>
-    <p>"A Hidden Place for Adults to Savor Special Moments" is more than just a phrase—it's our mission. Located in Osaka’s Nihonbashi for over 10 years, KORIAN is a Korean restaurant led by Chef Miyoung Lee, formerly of ‘Goya’ at Isetan Shinjuku. Our dishes reflect a deep respect for traditional Korean home cooking and seasonal ingredients.</p>
-    <p>We aim to provide both beauty and wellness for women, hearty meals for men, and a relaxing dining space for everyone. We also serve Korean traditional teas (yuja, maesil, quince, and medicinal teas) and Korean liquors.</p>
-    <p>We offer an omakase course that can be tailored to your budget and dietary preferences. Reservations are required. Lunch service is available by reservation only.</p>
-  </section>
+    <!-- About Section -->
+    <section class="about fade-in">
+        <div class="container">
+            <h2 class="section-title">A Special Moment in a Hidden Gem for Adults</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>At <span class="highlight">"KORIAN"</span>, we deliver authentic Korean cuisine even in the heart of Japan.</p>
+                    <p>We do not use any chemical seasonings (MSG), only seasonal and carefully selected ingredients that are kind to both body and soul.</p>
+                    <p>Our chef is from Korea.<br>We serve dishes with authentic skills and heart.<br>Experience true Korean taste available only here.</p>
+                </div>
+                <div class="about-image">
+                    <div>Authentic Skills and Heart</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section>
-    <h2>Signature Dishes</h2>
-    <p>Our popular dishes include:</p>
-    <ul>
-      <li>Herbal Bossam</li>
-      <li>Spicy Stir-fried Octopus</li>
-      <li>Spicy Pork Bulgogi</li>
-      <li>Japchae</li>
-      <li>Seafood Pancake</li>
-      <li>Kimchi Sampler</li>
-      <li>Stone Pot Bibimbap</li>
-      <li>Soft Tofu Stew</li>
-      <li>Kimchi Jjigae</li>
-    </ul>
-    <p>We also offer Ganjang Gejang (soy-marinated crab), various hot pots, traditional medicinal dishes, and royal court cuisine.</p>
-  </section>
+    <!-- Menu Section -->
+    <section class="menu fade-in">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Signature Dishes</h2>
+            <div class="menu-carousel">
+                <button class="scroll-indicator-left" onclick="scrollMenuLeft()">‹</button>
+                <button class="scroll-indicator-right" onclick="scrollMenuRight()">›</button>
+                <div class="menu-container" id="menuContainer">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <h3>Hot Stone Bibimbap</h3>
+                            <p>A Korean staple! Fragrant sesame oil and plenty of vegetables, finished healthily with additive-free seasoning.</p>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Seafood & Scallion Pancake</h3>
+                            <p>Crispy outside, chewy inside. Made without eggs to let the original flavors of the ingredients shine.</p>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Soft Tofu Stew</h3>
+                            <p>The rich flavor of tofu and a savory, deep broth. No chemical seasonings, yet full of depth.</p>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Tteokbokki (Spicy Rice Cake)</h3>
+                            <p>A classic from Korean street food. The sweet and spicy sauce is homemade and safe to enjoy.</p>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Kimchi Stew</h3>
+                            <p>Made with authentic, deeply fermented kimchi. A perfect balance of rich flavor and spiciness.</p>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Bulgogi (Marinated Beef)</h3>
+                            <p>Beef marinated in our special sauce and carefully grilled. The sweet and savory flavor will whet your appetite.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-hint">
+                    <span class="scroll-hint-icon">→</span>
+                    <span>Swipe to explore our menu</span>
+                </div>
+            </div>
+            <div class="menu-btn">
+                <a href="#" class="btn btn-primary">View Full Menu</a>
+            </div>
+        </div>
+    </section>
 
-  <section>
-    <h2>Why We Don’t Use MSG</h2>
-    <p>All of our dishes are crafted with ingredients sourced directly from Korea and are free from chemical seasonings. We cherish the natural taste of food and prioritize the health and wellness of our customers. We’ve been featured in magazines and praised by many for our clean and authentic flavors.</p>
-  </section>
+    <!-- Values Section -->
+    <section class="values fade-in">
+        <div class="container">
+            <div class="values-content">
+                <h2>Why Don’t We Use MSG?</h2>
+                <p>
+                    At KORIAN, we respect the natural flavors of ingredients and choose cooking methods that are gentle on the body.<br>
+                    We want you to enjoy authentic, safe, and healthy Korean cuisine in Japan—dishes you'll want to come back for every day.
+                </p>
+            </div>
+        </div>
+    </section>
 
-  <section>
-    <h2>Full Menu</h2>
-    <p>[The full English-translated menu will be displayed here soon. Stay tuned!]</p>
-  </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>KORIAN</h3>
+            <a href="https://maps.app.goo.gl/ubGPrWb3jCDZ9q95A?g_st=com.google.maps.preview.copy" target="_blank" rel="noopener noreferrer">
+              📍 〒542-0073 Osaka, Chuo Ward, Nipponbashi, 1 Chome−4−4 日本橋グリーンハイツ 105
+            </a>
+            <p>1-minute walk from Kintetsu Nipponbashi Station (Exit 6)</p>
+            <p>TEL: 06-6211-6225</p>
+            <p>Hours: 17:00 - 23:00 (Closed on Sundays)</p>
+            <br>
+            <p style="opacity: 0.6;">© 2025 KORIAN. All rights reserved.</p>
+        </div>
+    </footer>
 
-  <footer>
-    📍 〒542-0073 Osaka, Chuo Ward, Nipponbashi, 1 Chome−4−4 Nihonbashi Green Heights 105
-    (<a href="https://maps.app.goo.gl/ubGPrWb3jCDZ9q95A?g_st=com.google.maps.preview.copy" target="_blank">Open in Google Maps</a>)
-  </footer>
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
 
-  <script>
-    function changeLanguage(path) {
-      window.location.href = window.location.origin + path;
-    }
-  </script>
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Parallax effect for hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const heroContent = document.querySelector('.hero-content');
+            
+            if (hero && heroContent) {
+                heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Menu carousel scroll functions
+        function scrollMenuLeft() {
+            const container = document.getElementById('menuContainer');
+            container.scrollBy({
+                left: -340,
+                behavior: 'smooth'
+            });
+        }
+
+        function scrollMenuRight() {
+            const container = document.getElementById('menuContainer');
+            container.scrollBy({
+                left: 340,
+                behavior: 'smooth'
+            });
+        }
+
+        // Touch/swipe detection for mobile
+        let startX = 0;
+        const menuContainer = document.getElementById('menuContainer');
+        
+        if (menuContainer) {
+            menuContainer.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            }, { passive: true });
+
+            menuContainer.addEventListener('touchmove', (e) => {
+                if (!startX) return;
+                
+                const currentX = e.touches[0].clientX;
+                const diffX = startX - currentX;
+                
+                if (Math.abs(diffX) > 10) {
+                    menuContainer.scrollLeft += diffX;
+                    startX = currentX;
+                }
+            }, { passive: true });
+
+            menuContainer.addEventListener('touchend', () => {
+                startX = 0;
+            }, { passive: true });
+        }
+
+        // Button click effects
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                // Create ripple effect
+                const ripple = document.createElement('div');
+                const btnRect = this.getBoundingClientRect();
+                const rippleSize = Math.max(btnRect.width, btnRect.height);
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.6);
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    width: ${rippleSize}px;
+                    height: ${rippleSize}px;
+                    left: ${e.clientX - btnRect.left - rippleSize / 2}px;
+                    top: ${e.clientY - btnRect.top - rippleSize / 2}px;
+                `;
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
+<script>
+  function changeLanguage(url) {
+    window.location.href = window.location.origin + url;
+  }
+</script>
 </html>
