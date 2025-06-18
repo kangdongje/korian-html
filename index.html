@@ -477,6 +477,25 @@
             }
         }
     </style>
+    <style>
+    .lang-btn {
+      font-size: 2rem;
+      margin: 0 0.5rem;
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      border-radius: 50px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn:hover {
+      transform: scale(1.2);
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #ff6b6b;
+    }
+    </style>
 </head>
 <body>
     <!-- Hero Section -->
@@ -490,6 +509,12 @@
             </p>
             <div class="cta-buttons">
                 <a href="https://www.instagram.com/korian_artisan?igsh=d2xsazV6cDRvanpk" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Instagramを見る</a>
+            </div>
+            <div class="language-buttons" style="margin-top: 2rem; text-align: center;">
+              <button class="lang-btn" onclick="changeLanguage('/zh/index.html')">🇨🇳</button>
+              <button class="lang-btn" onclick="changeLanguage('/en/index.html')">🇺🇸</button>
+              <button class="lang-btn" onclick="changeLanguage('/ko/index.html')">🇰🇷</button>
+              <button class="lang-btn" onclick="changeLanguage('/ja/index.html')">🇯🇵</button>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -718,4 +743,9 @@
         document.head.appendChild(style);
     </script>
 </body>
+<script>
+  function changeLanguage(url) {
+    window.location.href = url;
+  }
+</script>
 </html>
