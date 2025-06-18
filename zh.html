@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KORIAN - 正宗韩餐</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0a0a0a;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    .hero p {
+      margin: 1rem 0;
+    }
+    .language-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .lang-btn {
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid white;
+      background: transparent;
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .lang-btn:hover {
+      background-color: white;
+      color: #0a0a0a;
+    }
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    a {
+      color: #00acee;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>KORIAN</h1>
+    <p>大人的隐藏之所，品味重要时光</p>
+    <p>
+      <a href="https://www.instagram.com/korian_artisan?igsh=d2xsazV6cDRvanpk" target="_blank">📸 Instagram</a>
+    </p>
+    <div class="language-buttons">
+      <button class="lang-btn" onclick="changeLanguage('/ko.html')">🇰🇷</button>
+      <button class="lang-btn" onclick="changeLanguage('/en.html')">🇺🇸</button>
+      <button class="lang-btn" onclick="changeLanguage('/zh.html')">🇨🇳</button>
+    </div>
+  </div>
+
+  <footer>
+    📍 〒542-0073 大阪府大阪市中央区日本橋1丁目4−4 日本橋グリーンハイツ 105
+    (<a href="https://maps.app.goo.gl/ubGPrWb3jCDZ9q95A?g_st=com.google.maps.preview.copy" target="_blank">在 Google 地图中打开</a>)
+  </footer>
+
+  <script>
+    function changeLanguage(url) {
+      window.location.href = window.location.origin + url;
+    }
+  </script>
+</body>
+</html>
