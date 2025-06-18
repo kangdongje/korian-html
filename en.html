@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KORIAN - Authentic Korean Cuisine</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0a0a0a;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    .section {
+      padding: 3rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    p {
+      line-height: 1.6;
+      margin: 1rem 0;
+    }
+    .language-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .lang-btn {
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid white;
+      background: transparent;
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .lang-btn:hover {
+      background-color: white;
+      color: #0a0a0a;
+    }
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    a {
+      color: #00acee;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <h1>KORIAN</h1>
+    <p style="text-align:center;">A Hidden Place for Adults to Savor Special Moments</p>
+    <p style="text-align:center;">
+      <a href="https://www.instagram.com/korian_artisan?igsh=d2xsazV6cDRvanpk" target="_blank">📸 Instagram</a>
+    </p>
+    <div class="language-buttons">
+      <button class="lang-btn" onclick="changeLanguage('/ko.html')">🇰🇷</button>
+      <button class="lang-btn" onclick="changeLanguage('/en.html')">🇺🇸</button>
+      <button class="lang-btn" onclick="changeLanguage('/zh.html')">🇨🇳</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Our Philosophy</h2>
+    <p>"A Hidden Place for Adults to Savor Special Moments" is more than a catchphrase—it's our mission. Our owner, Ms. Lee Miyoung, is a former head chef at 'Goya' in Isetan Shinjuku. For over 10 years in Osaka Nihonbashi, we've served authentic Korean home-style dishes in a peaceful, cozy atmosphere.</p>
+  </div>
+
+  <div class="section">
+    <h2>Featured Dishes</h2>
+    <p>Coming Soon — We are preparing introductions to our signature dishes like Japchae, Bulgogi, Seafood Pancake, and more.</p>
+  </div>
+
+  <div class="section">
+    <h2>Why We Don't Use MSG</h2>
+    <p>We believe in bringing out the true flavor of ingredients. Our dishes use carefully selected Korean imports and seasonal ingredients, offering peace of mind to health-conscious guests. We will share magazine reviews and real customer voices soon.</p>
+  </div>
+
+  <footer>
+    📍 〒542-0073 Osaka, Chuo Ward, Nipponbashi, 1 Chome−4−4 Nihonbashi Green Heights 105
+    (<a href="https://maps.app.goo.gl/ubGPrWb3jCDZ9q95A?g_st=com.google.maps.preview.copy" target="_blank">Open in Google Maps</a>)
+  </footer>
+
+  <script>
+    function changeLanguage(url) {
+      window.location.href = window.location.origin + url;
+    }
+  </script>
+</body>
+</html>
