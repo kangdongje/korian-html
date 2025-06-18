@@ -5,87 +5,150 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>KORIAN - Authentic Korean Cuisine</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #0a0a0a;
-      color: white;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-    .section {
-      padding: 3rem 1rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    h1, h2 {
-      text-align: center;
-    }
-    p {
+
+    body {
+      font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', 'Yu Gothic', 'Meiryo', sans-serif;
       line-height: 1.6;
-      margin: 1rem 0;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
     }
-    .language-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    .lang-btn {
-      font-size: 2rem;
-      padding: 0.5rem 1rem;
-      border: 1px solid white;
-      background: transparent;
-      color: white;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .lang-btn:hover {
-      background-color: white;
-      color: #0a0a0a;
-    }
-    footer {
-      margin-top: 3rem;
-      text-align: center;
-      font-size: 0.9rem;
-    }
+
     a {
       color: #00acee;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .lang-select {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .lang-btn {
+      font-size: 2rem;
+      padding: 0.4rem 1rem;
+      background: transparent;
+      border: 1px solid #fff;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn:hover {
+      background-color: #fff;
+      color: #000;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    section p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+  ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+      background-color: #111;
     }
   </style>
 </head>
 <body>
-  <div class="section">
+  <div class="hero">
     <h1>KORIAN</h1>
-    <p style="text-align:center;">A Hidden Place for Adults to Savor Special Moments</p>
-    <p style="text-align:center;">
-      <a href="https://www.instagram.com/korian_artisan?igsh=d2xsazV6cDRvanpk" target="_blank">📸 Instagram</a>
-    </p>
-    <div class="language-buttons">
+    <p>A Hidden Place for Adults to Savor Special Moments</p>
+    <a href="https://www.instagram.com/korian_artisan?igsh=d2xsazV6cDRvanpk" target="_blank">📸 Visit us on Instagram</a>
+    <div class="lang-select">
       <button class="lang-btn" onclick="changeLanguage('/ko.html')">🇰🇷</button>
       <button class="lang-btn" onclick="changeLanguage('/en.html')">🇺🇸</button>
       <button class="lang-btn" onclick="changeLanguage('/zh.html')">🇨🇳</button>
     </div>
   </div>
 
-  <div class="section">
+  <section>
     <h2>Our Philosophy</h2>
-    <p>"A Hidden Place for Adults to Savor Special Moments" is more than a catchphrase—it's our mission. Our owner, Ms. Lee Miyoung, is a former head chef at 'Goya' in Isetan Shinjuku. For over 10 years in Osaka Nihonbashi, we've served authentic Korean home-style dishes in a peaceful, cozy atmosphere.</p>
-  </div>
+    <p>"A Hidden Place for Adults to Savor Special Moments" is more than just a phrase—it's our mission. Located in Osaka’s Nihonbashi for over 10 years, KORIAN is a Korean restaurant led by Chef Miyoung Lee, formerly of ‘Goya’ at Isetan Shinjuku. Our dishes reflect a deep respect for traditional Korean home cooking and seasonal ingredients.</p>
+    <p>We aim to provide both beauty and wellness for women, hearty meals for men, and a relaxing dining space for everyone. We also serve Korean traditional teas (yuja, maesil, quince, and medicinal teas) and Korean liquors.</p>
+    <p>We offer an omakase course that can be tailored to your budget and dietary preferences. Reservations are required. Lunch service is available by reservation only.</p>
+  </section>
 
-  <div class="section">
-    <h2>Featured Dishes</h2>
-    <p>Coming Soon — We are preparing introductions to our signature dishes like Japchae, Bulgogi, Seafood Pancake, and more.</p>
-  </div>
+  <section>
+    <h2>Signature Dishes</h2>
+    <p>Our popular dishes include:</p>
+    <ul>
+      <li>Herbal Bossam</li>
+      <li>Spicy Stir-fried Octopus</li>
+      <li>Spicy Pork Bulgogi</li>
+      <li>Japchae</li>
+      <li>Seafood Pancake</li>
+      <li>Kimchi Sampler</li>
+      <li>Stone Pot Bibimbap</li>
+      <li>Soft Tofu Stew</li>
+      <li>Kimchi Jjigae</li>
+    </ul>
+    <p>We also offer Ganjang Gejang (soy-marinated crab), various hot pots, traditional medicinal dishes, and royal court cuisine.</p>
+  </section>
 
-  <div class="section">
-    <h2>Why We Don't Use MSG</h2>
-    <p>We believe in bringing out the true flavor of ingredients. Our dishes use carefully selected Korean imports and seasonal ingredients, offering peace of mind to health-conscious guests. We will share magazine reviews and real customer voices soon.</p>
-  </div>
+  <section>
+    <h2>Why We Don’t Use MSG</h2>
+    <p>All of our dishes are crafted with ingredients sourced directly from Korea and are free from chemical seasonings. We cherish the natural taste of food and prioritize the health and wellness of our customers. We’ve been featured in magazines and praised by many for our clean and authentic flavors.</p>
+  </section>
+
+  <section>
+    <h2>Full Menu</h2>
+    <p>[The full English-translated menu will be displayed here soon. Stay tuned!]</p>
+  </section>
 
   <footer>
     📍 〒542-0073 Osaka, Chuo Ward, Nipponbashi, 1 Chome−4−4 Nihonbashi Green Heights 105
@@ -93,8 +156,8 @@
   </footer>
 
   <script>
-    function changeLanguage(url) {
-      window.location.href = window.location.origin + url;
+    function changeLanguage(path) {
+      window.location.href = window.location.origin + path;
     }
   </script>
 </body>
