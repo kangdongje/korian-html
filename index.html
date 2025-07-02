@@ -123,6 +123,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            overflow: visible;
         }
 
         .section-title {
@@ -147,16 +148,19 @@
 
         .about-content {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
+            grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
             margin-top: 4rem;
+            position: relative;
         }
 
         .about-text {
             font-size: 14px;
             line-height: 2;
             color: #555;
+            position: relative;
+            z-index: 2;
         }
 
         .about-text p {
@@ -169,8 +173,11 @@
         }
 
         .about-image {
-            position: relative;
-            height: 400px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 40%;
             background: linear-gradient(45deg, #ff6b6b, #8B4513);
             border-radius: 20px;
             display: flex;
