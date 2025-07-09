@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한마음 - 전통 한식의 맛</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+            background: linear-gradient(135deg, #2C1810 0%, #3E2723 50%, #4A2C20 100%);
+            color: #F5E6D3;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 80px 0 100px;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);
+        }
+
+        .header-ornament {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent 0%, #D4A574 50%, transparent 100%);
+            border-radius: 2px;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #D4A574, #F4E4BC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 20px rgba(212, 165, 116, 0.3);
+            letter-spacing: 0.1em;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.8;
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: 0.05em;
+        }
+
+        /* Menu Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 60px 0;
+        }
+
+        .menu-item {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            group: hover;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 30px rgba(212, 165, 116, 0.2);
+            border-color: rgba(212, 165, 116, 0.4);
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #D4A574, #F4E4BC, #D4A574);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .menu-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .food-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(45deg, #8B4513, #A0522D, #CD853F);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .food-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 70%, rgba(212, 165, 116, 0.3) 0%, transparent 50%);
+        }
+
+        .food-image::after {
+            content: '🍽️';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            opacity: 0.6;
+            filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3));
+        }
+
+        .menu-content {
+            padding: 30px;
+        }
+
+        .dish-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #D4A574;
+            letter-spacing: 0.02em;
+        }
+
+        .dish-name-ko {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+
+        .dish-description {
+            color: #E8D5C0;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: fixed;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-1 {
+            top: 20%;
+            left: 10%;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-2 {
+            top: 60%;
+            right: 15%;
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, rgba(244, 228, 188, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        .floating-3 {
+            bottom: 20%;
+            left: 20%;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-top: 1px solid rgba(212, 165, 116, 0.2);
+            margin-top: 80px;
+        }
+
+        .footer-text {
+            opacity: 0.6;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 40px 0;
+            }
+            
+            .menu-item {
+                margin: 0 10px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        /* Scroll animations */
+        .menu-item {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .menu-item:nth-child(1) { animation-delay: 0.1s; }
+        .menu-item:nth-child(2) { animation-delay: 0.2s; }
+        .menu-item:nth-child(3) { animation-delay: 0.3s; }
+        .menu-item:nth-child(4) { animation-delay: 0.4s; }
+        .menu-item:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-element floating-1"></div>
+    <div class="floating-element floating-2"></div>
+    <div class="floating-element floating-3"></div>
+
+    <header>
+        <div class="container">
+            <div class="header-ornament"></div>
+            <h1>한마음</h1>
+            <p class="subtitle">정통 한식의 따뜻한 맛을 전해드립니다</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="food-image"></div>
+                    <div class="menu-content">
+                        <div class="dish-name-ko">잡채</div>
+                        <h2 class="dish-name">チャプチェ</h2>
+                        <p class="dish-description">
+                            韓国の伝統的な春雨炒め。<br>
+                            野菜と牛肉をたっぷり使い、ごま油と自家製ダレで風味豊かに仕上げました。<br>
+                            ヘルシーで優しい味わいが人気です。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="food-image"></div>
+                    <div class="menu-content">
+                        <div class="dish-name-ko">해물파전</div>
+                        <h2 class="dish-name">海鮮チヂミ</h2>
+                        <p class="dish-description">
+                            外はカリッ、中はもちもち。<br>
+                            エビやイカなど新鮮な海鮮をふんだんに使用し、卵を使わず素材本来の味を活かしました。<br>
+                            特製タレでどうぞ。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="food-image"></div>
+                    <div class="menu-content">
+                        <div class="dish-name-ko">오징어볶음</div>
+                        <h2 class="dish-name">イカ炒め</h2>
+                        <p class="dish-description">
+                            新鮮なイカと野菜をコチュジャンベースの甘辛いソースで炒めた一品。<br>
+                            ピリ辛の中にも旨味が広がり、ご飯やお酒が進みます。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="food-image"></div>
+                    <div class="menu-content">
+                        <div class="dish-name-ko">제육볶음</div>
+                        <h2 class="dish-name">豚肉炒め</h2>
+                        <p class="dish-description">
+                            薄切り豚肉を特製甘辛ダレで炒めた人気定番料理。<br>
+                            ご飯のおかずはもちろん、お酒のおつまみにもピッタリ。<br>
+                            辛さはお好みで調整できます。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="food-image"></div>
+                    <div class="menu-content">
+                        <div class="dish-name-ko">보쌈</div>
+                        <h2 class="dish-name">茹で豚の盛り合わせ</h2>
+                        <p class="dish-description">
+                            じっくり茹でた柔らかい豚肉を、キムチや薬味と一緒に包んで食べる韓国の家庭料理。<br>
+                            さっぱりしつつも旨味たっぷりで、ヘルシー志向の方にもおすすめです。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="footer-text">한국의 정성이 담긴 따뜻한 한 끼를 선사합니다</p>
+        </div>
+    </footer>
+</body>
+</html>
