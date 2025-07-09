@@ -13,3 +13,10 @@
   width: 80%;
   height: auto;
 }
+
+.logo-image-small {
+  max-width: 150px;
+  width: 60%;
+  height: auto;
+  margin-bottom: 10px;
+}
