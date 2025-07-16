@@ -248,6 +248,8 @@
 
         .menu-grid {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 2rem;
             padding: 1rem 0 2rem 0;
             min-width: max-content;
@@ -257,10 +259,12 @@
             background: rgba(212, 165, 116, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 2rem;
+            padding: 1.5rem;
             transition: all 0.3s ease;
             border: 2px solid rgba(139, 69, 19, 0.3);
-            min-width: 320px;
+            min-width: 280px;
+            max-width: 300px;
+            height: auto;
             flex-shrink: 0;
             position: relative;
             cursor: pointer;
