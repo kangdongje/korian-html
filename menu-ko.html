@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>한마음 - 전통 한식의 맛</title>
+    <title>korian</title>
     <style>
+        .section-header {
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin: 60px 0 40px;
+            text-align: center;
+            color: #D4A574;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #D4A574, transparent);
+        }
         * {
             margin: 0;
             padding: 0;
@@ -132,8 +152,13 @@
             filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3));
         }
 
+        .food-image:has(img)::after {
+            display: none;
+        }
+
         .menu-content {
             padding: 30px;
+            text-align: left;
         }
 
         .dish-name {
@@ -142,6 +167,7 @@
             margin-bottom: 15px;
             color: #D4A574;
             letter-spacing: 0.02em;
+            text-align: left;
         }
 
         .dish-name-ko {
@@ -149,6 +175,7 @@
             opacity: 0.7;
             margin-bottom: 8px;
             font-weight: 400;
+            text-align: left;
         }
 
         .dish-description {
@@ -156,6 +183,7 @@
             line-height: 1.7;
             font-size: 0.95rem;
             opacity: 0.9;
+            text-align: left;
         }
 
         /* Floating Elements */
@@ -236,27 +264,26 @@
         }
 
         /* Scroll animations */
-        .menu-item {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards;
+
+        .logo-image {
+            max-width: 80%;
+            height: auto;
         }
 
-        .menu-item:nth-child(1) { animation-delay: 0.1s; }
-        .menu-item:nth-child(2) { animation-delay: 0.2s; }
-        .menu-item:nth-child(3) { animation-delay: 0.3s; }
-        .menu-item:nth-child(4) { animation-delay: 0.4s; }
-        .menu-item:nth-child(5) { animation-delay: 0.5s; }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
+        @media (max-width: 480px) {
+            .logo-image {
+                max-width: 65%;
             }
+        }
+
+        /* 食事メニュー: Meal Menu grid left align */
+        .menu-grid.left-align {
+            justify-content: flex-start;
         }
     </style>
 </head>
 <body>
+    
     <div class="floating-element floating-1"></div>
     <div class="floating-element floating-2"></div>
     <div class="floating-element floating-3"></div>
@@ -264,83 +291,455 @@
     <header>
         <div class="container">
             <div class="header-ornament"></div>
-            <h1>한마음</h1>
-            <p class="subtitle">정통 한식의 따뜻한 맛을 전해드립니다</p>
+            <h1><img src="logo.png" alt="KORIAN ロゴ" class="logo-image" /></h1>
+            <p class="subtitle"></p>
         </div>
     </header>
-
     <main>
+ <!-- 대표메뉴 -->
         <div class="container">
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="food-image"></div>
-                    <div class="menu-content">
-                        <div class="dish-name-ko">잡채</div>
-                        <h2 class="dish-name">チャプチェ</h2>
-                        <p class="dish-description">
-                            韓国の伝統的な春雨炒め。<br>
-                            野菜と牛肉をたっぷり使い、ごま油と自家製ダレで風味豊かに仕上げました。<br>
-                            ヘルシーで優しい味わいが人気です。
-                        </p>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <div class="food-image"></div>
-                    <div class="menu-content">
-                        <div class="dish-name-ko">해물파전</div>
-                        <h2 class="dish-name">海鮮チヂミ</h2>
-                        <p class="dish-description">
-                            外はカリッ、中はもちもち。<br>
-                            エビやイカなど新鮮な海鮮をふんだんに使用し、卵を使わず素材本来の味を活かしました。<br>
-                            特製タレでどうぞ。
-                        </p>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <div class="food-image"></div>
-                    <div class="menu-content">
-                        <div class="dish-name-ko">오징어볶음</div>
-                        <h2 class="dish-name">イカ炒め</h2>
-                        <p class="dish-description">
-                            新鮮なイカと野菜をコチュジャンベースの甘辛いソースで炒めた一品。<br>
-                            ピリ辛の中にも旨味が広がり、ご飯やお酒が進みます。
-                        </p>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <div class="food-image"></div>
-                    <div class="menu-content">
-                        <div class="dish-name-ko">제육볶음</div>
-                        <h2 class="dish-name">豚肉炒め</h2>
-                        <p class="dish-description">
-                            薄切り豚肉を特製甘辛ダレで炒めた人気定番料理。<br>
-                            ご飯のおかずはもちろん、お酒のおつまみにもピッタリ。<br>
-                            辛さはお好みで調整できます。
-                        </p>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <div class="food-image"></div>
-                    <div class="menu-content">
-                        <div class="dish-name-ko">보쌈</div>
-                        <h2 class="dish-name">茹で豚の盛り合わせ</h2>
-                        <p class="dish-description">
-                            じっくり茹でた柔らかい豚肉を、キムチや薬味と一緒に包んで食べる韓国の家庭料理。<br>
-                            さっぱりしつつも旨味たっぷりで、ヘルシー志向の方にもおすすめです。
-                        </p>
-                    </div>
-                </div>
+         <h2 class="section-header">추천 요리</h2>
+         <div class="menu-grid">
+           <div class="menu-item">
+             <div class="food-image">
+              <img src="menu_japchae.jpg" alt="잡채" style="width: 100%; height: 100%; object-fit: cover;" />
+             </div>
+             <div class="menu-content">
+               <h2 class="dish-name">잡채</h2>
+               <p class="dish-description">한국 당면, 당근, 얇게 썬 소고기 등을 간장 양념에 볶아 무친 요리입니다.</p>
+             </div>
+           </div>
+           <div class="menu-item">
+             <div class="food-image"></div>
+             <div class="menu-content">
+               <h2 class="dish-name">해물파전</h2>
+               <p class="dish-description">해산물과 파가 들어간 전입니다.</p>
+             </div>
+           </div>
+           <div class="menu-item">
+             <div class="food-image">
+               <img src="menu_gamja-jeon.jpg" alt="감자전" style="width: 100%; height: 100%; object-fit: cover;" />
+             </div>
+             <div class="menu-content">
+               <h2 class="dish-name">감자전</h2>
+               <p class="dish-description">얇고 바삭한 감자전입니다.</p>
+             </div>
+           </div>
+           <div class="menu-item">
+            <div class="food-image">
+             <img src="menu_ojingeohoe-muchim.jpg" alt="오징어무침" style="width: 100%; height: 100%; object-fit: cover;" />
             </div>
+             <div class="menu-content">
+               <h2 class="dish-name">오징어무침</h2>
+               <p class="dish-description">달콤하고 매콤새콤한 오징어 무침입니다.</p>
+             </div>
+           </div>
+           <div class="menu-item">
+             <div class="food-image"></div>
+             <div class="menu-content">
+               <h2 class="dish-name">오징어볶음</h2>
+               <p class="dish-description">오징어와 야채를 고추장 등으로 매콤하게 볶은 요리입니다.</p>
+             </div>
+           </div>
+           <div class="menu-item">
+             <div class="food-image">
+               <img src="menu_jeyuk-bokkeum.jpg" alt="제육볶음" style="width: 100%; height: 100%; object-fit: cover;" />
+             </div>
+             <div class="menu-content">
+               <h2 class="dish-name">제육볶음</h2>
+               <p class="dish-description">돼지고기와 야채를 매콤달콤하게 볶은 집밥 스타일의 인기 요리입니다. ※인기 No.3</p>
+             </div>
+           </div>
+           <div class="menu-item">
+             <div class="food-image">
+               <img src="menu_bossam.jpg" alt="漢方ボッサム" style="width: 100%; height: 100%; object-fit: cover;" />
+             </div>
+             <div class="menu-content">
+               <h2 class="dish-name">한방보쌈</h2>
+               <p class="dish-description">한방 재료로 삶은 돼지고기를 김치와 함께 싸서 먹는 요리입니다. ※인기 No.1</p>
+             </div>
+           </div>
+           <div class="menu-item">
+             <div class="food-image">
+               <img src="menu_gyeran-jjim.jpg" alt="계란찜" style="width: 100%; height: 100%; object-fit: cover;" />
+             </div>
+             <div class="menu-content">
+               <h2 class="dish-name">뚝배기계란찜</h2>
+               <p class="dish-description">계란과 육수를 섞고 파, 당근 등을 넣어 뚝배기에 쪄낸 계란찜입니다.</p>
+             </div>
+           </div>
+           <div class="menu-item">
+             <div class="food-image">
+               <img src="menu_nakji-bokkeum.jpg" alt="낙지볶음" style="width: 100%; height: 100%; object-fit: cover;" />
+             </div>
+             <div class="menu-content">
+               <h2 class="dish-name">낙지볶음</h2>
+               <p class="dish-description">매콤하게 볶은 낙지볶음입니다. ※인기 No.2</p>
+             </div>
+           </div>
+           <div class="menu-item">
+             <div class="food-image">
+              <img src="menu_kimchi-set.jpg" alt="김치모리" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+             <div class="menu-content">
+               <h2 class="dish-name">김치세트</h2>
+               <p class="dish-description">배추, 무, 오이 김치 세트입니다. (단품 700엔)</p>
+             </div>
+           </div>
+           <div class="menu-item">
+             <div class="food-image">
+               <img src="menu_namul-set.jpg" alt="나물세트" style="width: 100%; height: 100%; object-fit: cover;" />
+             </div>
+             <div class="menu-content">
+               <h2 class="dish-name">나물세트</h2>
+               <p class="dish-description">데친 나물을 참깨, 양념, 참기름으로 무친 집밥 반찬입니다. (단품 700엔)</p>
+             </div>
+           </div>
+           <div class="menu-item">
+             <div class="food-image"></div>
+             <div class="menu-content">
+               <h2 class="dish-name">불고기</h2>
+               <p class="dish-description">소고기와 야채를 달콤짭짤한 양념에 재워 볶아낸 한국 대표 요리입니다.</p>
+             </div>
+           </div>
+         <p style="text-align:center;"></p>
         </div>
-    </main>
+        </div>
+  <!-- おすすめ料理【鍋・チゲ】 -->
+        <div class="container">
+          <h2 class="section-header">추천 요리<br>【전골·찌개】</h2>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <div class="food-image"></div>
+              <div class="menu-content">
+                <h2 class="dish-name">부대찌개</h2>
+                <p class="dish-description">
+                  소시지, 스팸, 야채, 떡, 두부 등 다양한 재료를 넣고 끓여 먹는 한국식 찌개입니다.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image"></div>
+              <div class="menu-content">
+                <h2 class="dish-name">불낙전골</h2>
+                <p class="dish-description">
+                  부드러운 소고기와 매콤한 낙지가 어우러진 전골 요리입니다.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_gamjatang.jpg" alt="감자탕" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">감자탕</h2>
+                <p class="dish-description">
+                  돼지 등뼈 또는 목살을 감자, 채소와 함께 얼큰하게 끓인 전골입니다.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_haemul-tang.jpg" alt="해물탕" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">해물탕</h2>
+                <p class="dish-description">
+                  다양한 해산물과 채소를 고추장 베이스의 얼큰한 국물에 끓인 해물탕입니다.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image"></div>
+              <div class="menu-content">
+                <h2 class="dish-name">닭볶음탕</h2>
+                <p class="dish-description">
+                  닭고기, 감자, 당근 등을 매콤한 양념에 넣고 끓인 인기 찜닭/전골 요리입니다.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_samgyetang.jpg" alt="삼계탕" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">삼계탕</h2>
+                <p class="dish-description">
+                  닭 안에 인삼, 찹쌀, 잣 등을 넣어 푹 고아낸 보양식입니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+                <!-- 焼肉メニュー -->
+        <div class="container">
+          <h2 class="section-header">구이 메뉴</h2>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_yangnyeom-galbi.jpg" alt="양념갈비" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">양념갈비</h2>
+                <p class="dish-description">
+                  숙성 양념 돼지갈비, 반찬, 양배추 슬라이스, 무절임, 야채&양념장이 세트로 제공됩니다. 추가로 된장찌개, 물냉면, 양배추 슬라이스 등 주문 가능합니다.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_samgyeopsal.jpg" alt="삼겹살" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">삼겹살</h2>
+                <p class="dish-description">
+                  삼원돈 삼겹살, 반찬, 양배추 샐러드, 구운 김치, 마늘 슬라이스&야채, 약재 세트가 포함됩니다. 추가로 된장찌개, 볶음밥, 깻잎, 구운 김치 등 주문 가능합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+          <p style="text-align: center;">※2인분부터 주문 가능합니다.</p>
+        </div>
+        <!-- 예약메뉴 -->
+        <div class="container">
+          <h2 class="section-header">예약 메뉴</h2>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_ganjang-gejang.jpg" alt="간장게장" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">간장게장</h2>
+                <p class="dish-description">
+                  신선한 꽃게를 간장 양념에 숙성시킨 간장게장입니다.<br>
+                  시가(1~2주 전 예약 필수)
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_saeu-jang.jpg" alt="새우장" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">새우장</h2>
+                <p class="dish-description">
+                  신선한 새우를 간장 양념에 숙성시킨 새우장입니다.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_jeon-mori.jpg" alt="전모리" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">전모리</h2>
+                <p class="dish-description">
+                  삼색꼬치전, 표고버섯전, 대구전, 새우전, 계절전 등 계절에 따라 구성이 변경될 수 있습니다.<br>
+                  달걀물과 밀가루를 입혀 부친 다양한 전입니다.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_gujeolpan.jpg" alt="구절판" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">구절판</h2>
+                <p class="dish-description">
+                  팔각 그릇에 8가지 재료를 담고, 밀가루로 만든 전병에 싸서 먹는 궁중요리입니다.<br>
+                  다채로운 색감의 궁중요리입니다.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image"></div>
+              <div class="menu-content">
+                <h2 class="dish-name">닭한마리X신선로</h2>
+                <p class="dish-description">
+                  신선로 냄비에 닭한마리(백숙)와 전복, 약재 등을 함께 담아<br>
+                  오랜 시간 우려낸 육수를 부어 먹는 특별한 전골입니다.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image"></div>
+              <div class="menu-content">
+                <h2 class="dish-name">백숙</h2>
+                <p class="dish-description">
+                  통닭에 인삼, 밤, 대추 등 한방 재료를 넣고 오랜 시간 끓인 백숙입니다.<br>
+                  닭을 잘라 동대문식 닭한마리 전골로도 제공 가능합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!-- 食事メニュー：Meal Menu セクション -->
+    <section class="menu-section">
+      <div class="container">
+        <h2 class="section-header">식사 메뉴: Meal Menu</h2>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="food-image"></div>
+            <div class="menu-content">
+              <h2 class="dish-name">돌솥비빔밥</h2>
+              <p class="dish-description">돌솥에 밥을 담고 나물을 고명으로 올려 비벼 먹는 대표적인 한국 요리입니다. +반찬 포함</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="food-image">
+             <img src="menu_haemul-sundubu.jpg" alt="해물순두부찌개" style="width: 100%; height: 100%; object-fit: cover;" />
+             </div>
+            <div class="menu-content">
+              <h2 class="dish-name">해물순두부찌개</h2>
+              <p class="dish-description">해산물의 감칠맛과 부드러운 순두부가 어우러진 얼큰한 찌개입니다. +밥과 반찬 포함</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="food-image">
+             <img src="menu_doenjang-jjigae.jpg" alt="된장찌개" style="width: 100%; height: 100%; object-fit: cover;" />
+             </div>
+            <div class="menu-content">
+              <h2 class="dish-name">된장찌개</h2>
+              <p class="dish-description">바지락, 야채, 두부 등을 넣고 끓인 영양만점의 된장찌개입니다. +밥과 반찬 포함</p>
+            </div>
+          </div>
+        </div>
+        <p class="menu-note" style="text-align: center;"></p>
+      </div>
+      <!-- 음료 -->
+        <div class="container">
+          <h2 class="section-header">음료 메뉴</h2>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_draft-beer.jpg" alt="생맥주" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">생맥주</h2>
+                <p class="dish-description">중 / 소 / 병맥주 500ml / 논알코올 맥주</p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_highball.jpg" alt="하이볼" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">하이볼</h2>
+                <p class="dish-description"></p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_sour.jpg" alt="칵테일(사와)" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">칵테일(사와)</h2>
+                <p class="dish-description">레몬 / 복숭아</p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_sake.jpg" alt="사케" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">사케</h2>
+                <p class="dish-description">글라스 / 1합 / 2합</p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_barley-soju.jpg" alt="보리소주" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">보리소주</h2>
+                <p class="dish-description">니카이도/오이타현<br>글라스 / 병 900ml<br></p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_sweetpotato-soju.jpg" alt="고구마소주" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">고구마소주</h2>
+                <p class="dish-description">쿠로키리시마/미야자키현<br>글라스 / 병 720ml, 900ml, 1800ml<br>
+                                            사츠마챠야/가고시마현<br>글라스 / 병 1800ml<br>
+                                            사츠마챠야/가고시마현/숙성: 터널 숙성<br>글라스 / 병 1800ml<br>
+                                            미타케/가고시마현/숙성: 터널 숙성<br>글라스 / 병 1800ml<br></p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_plum-wine.jpg" alt="매실주" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">매실주</h2>
+                <p class="dish-description">기성품(글라스) / (글라스)</p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_premium.jpg" alt="프리미엄" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">프리미엄</h2>
+                <p class="dish-description">모리이조 / 무라오 / 마오 등</p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_korean-soju.jpg" alt="한국소주" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">한국소주</h2>
+                <p class="dish-description">한국 소주(참이슬, 좋은데이, 처음처럼: 375ml)<br>
+                                            백세주(375ml)<br>
+                                            복분자주(375ml)<br></p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_makgeolli.jpg" alt="막걸리" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">막걸리</h2>
+                <p class="dish-description">글라스 / 주전자</p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_ginseng-wine.jpg" alt="고려인삼주" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">고려인삼주</h2>
+                <p class="dish-description">글라스</p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_soft-drink.jpg" alt="소프트드링크" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">소프트드링크</h2>
+                <p class="dish-description">고려인삼주스 / 홍삼차(아이스·핫) / 유자차(아이스·핫) / 우롱차/보리차(아이스·핫)<br>
+                                             콜라 / 사이다 / 진저에일 / 오렌지주스 / 커피</p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_korean-drink.jpg" alt="한국 음료" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="menu-content">
+                <h2 class="dish-name">한국 음료</h2>
+                <p class="dish-description">갈아 만든 배<br>코코(복숭아)<br>쎄쎄(오렌지)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
-            <p class="footer-text">한국의 정성이 담긴 따뜻한 한 끼를 선사합니다</p>
+            <p class="footer-text"></p>
         </div>
     </footer>
 </body>

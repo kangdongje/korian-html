@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KORIAN - 正宗韩国家庭料理</title>
+    <title>KORIAN - 본장의 한국요리</title>
     <style>
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.5;
+            pointer-events: none;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -14,14 +25,14 @@
         body {
             font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', 'Yu Gothic', 'Meiryo', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #2c1810;
             overflow-x: hidden;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d1810 50%, #8B4513 100%);
+            background: linear-gradient(135deg, #1a0f0a 0%, #2c1810 30%, #3d2417 70%, #4a2d1a 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -37,8 +48,11 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(160, 82, 45, 0.1) 0%, transparent 50%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="woodgrain" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M 0 0 L 8 0 M 0 4 L 8 4" stroke="rgba(139,69,19,0.1)" stroke-width="0.5"/><path d="M 0 2 Q 4 1 8 2 M 0 6 Q 4 5 8 6" stroke="rgba(160,82,45,0.08)" stroke-width="0.3" fill="none"/></pattern></defs><rect width="100" height="100" fill="url(%23woodgrain)"/></svg>');
+            opacity: 0.4;
         }
 
         .hero-content {
@@ -49,7 +63,7 @@
 
         .hero-subtitle {
             font-size: 1.2rem;
-            color: #ff6b6b;
+            color: #d4a574;
             margin-bottom: 1rem;
             font-weight: 300;
             letter-spacing: 3px;
@@ -58,15 +72,21 @@
         .hero-title {
             font-size: 4rem;
             font-weight: 900;
-            color: #fff;
+            color: #f4e4c1;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
             letter-spacing: 5px;
+        }
+
+        .logo-image {
+            max-width: 300px;
+            width: 80%;
+            height: auto;
         }
 
         .hero-description {
             font-size: 1.3rem;
-            color: #f0f0f0;
+            color: #e6d3b7;
             margin-bottom: 3rem;
             font-weight: 300;
             line-height: 1.8;
@@ -94,42 +114,44 @@
         }
 
         .btn-primary {
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
-            color: white;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: #f4e4c1;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
         }
 
         .btn-secondary {
             background: transparent;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.7);
+            color: #d4a574;
+            border: 2px solid rgba(212, 165, 116, 0.7);
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
         }
 
         .btn-primary:hover {
-            box-shadow: 0 6px 25px rgba(255, 107, 107, 0.6);
+            background: linear-gradient(45deg, #a0522d, #cd853f);
+            box-shadow: 0 6px 25px rgba(139, 69, 19, 0.6);
         }
 
         /* About Section */
         .about {
             padding: 5rem 2rem;
-            background: linear-gradient(180deg, #fff 0%, #f8f9fa 100%);
+            background: linear-gradient(180deg, #f4e4c1 0%, #e6d3b7 100%);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            overflow: visible;
         }
 
         .section-title {
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 3rem;
-            color: #2c3e50;
+            color: #2c1810;
             position: relative;
         }
 
@@ -141,7 +163,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            background: linear-gradient(45deg, #8b4513, #a0522d);
             border-radius: 2px;
         }
 
@@ -154,9 +176,13 @@
         }
 
         .about-text {
-            font-size: 1.1rem;
+            font-size: 14px;
             line-height: 2;
-            color: #555;
+            color: #3d2417;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
         }
 
         .about-text p {
@@ -164,29 +190,42 @@
         }
 
         .highlight {
-            color: #ff6b6b;
+            color: #8b4513;
             font-weight: 600;
         }
 
         .about-image {
             position: relative;
             height: 400px;
-            background: linear-gradient(45deg, #ff6b6b, #8B4513);
+            background: linear-gradient(45deg, #2c1810, #3d2417);
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: #d4a574;
             font-size: 1.5rem;
             font-weight: 600;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(44, 24, 16, 0.3);
+            border: 3px solid #8b4513;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="woodtexture" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="rgba(139,69,19,0.1)"/><path d="M 0 6 Q 6 4 12 6" stroke="rgba(212,165,116,0.2)" stroke-width="1" fill="none"/></pattern></defs><rect width="100" height="100" fill="url(%23woodtexture)"/></svg>');
+            border-radius: 20px;
+            opacity: 0.6;
         }
 
         /* Menu Section */
         .menu {
             padding: 5rem 2rem;
-            background: #2c3e50;
-            color: white;
+            background: linear-gradient(135deg, #2c1810 0%, #3d2417 50%, #4a2d1a 100%);
+            color: #f4e4c1;
         }
 
         .menu-carousel {
@@ -199,38 +238,52 @@
             overflow-y: hidden;
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
 
         .menu-container::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
+            display: none;
         }
 
         .menu-grid {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 2rem;
             padding: 1rem 0 2rem 0;
             min-width: max-content;
         }
 
         .menu-item {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(212, 165, 116, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 2rem;
+            padding: 1.5rem;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            min-width: 320px;
+            border: 2px solid rgba(139, 69, 19, 0.3);
+            min-width: 280px;
+            max-width: 300px;
+            height: auto;
             flex-shrink: 0;
             position: relative;
             cursor: pointer;
         }
 
+        .food-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+        }
+
         .menu-item:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            background: rgba(212, 165, 116, 0.2);
+            border-color: #8b4513;
         }
 
         .menu-item::before {
@@ -240,7 +293,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            background: linear-gradient(45deg, #8b4513, #a0522d);
             border-radius: 20px 20px 0 0;
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -253,13 +306,14 @@
         .menu-item h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #ff6b6b;
+            color: #d4a574;
         }
 
         .menu-item p {
             font-size: 1rem;
             line-height: 1.8;
             opacity: 0.9;
+            color: #e6d3b7;
         }
 
         .scroll-indicator-left,
@@ -267,9 +321,9 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 107, 107, 0.9);
-            color: white;
-            border: none;
+            background: rgba(139, 69, 19, 0.9);
+            color: #f4e4c1;
+            border: 2px solid #8b4513;
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -294,15 +348,15 @@
 
         .scroll-indicator-left:hover,
         .scroll-indicator-right:hover {
-            background: #ff6b6b;
+            background: #a0522d;
             transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.5);
         }
 
         .scroll-hint {
             text-align: center;
             margin-top: 2rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(212, 165, 116, 0.8);
             font-size: 0.9rem;
             display: flex;
             align-items: center;
@@ -328,31 +382,52 @@
         /* Values Section */
         .values {
             padding: 5rem 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #8b4513 0%, #6b3410 50%, #4a2d1a 100%);
+            color: #f4e4c1;
+            position: relative;
+        }
+
+        .values::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="woodpattern" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 0 10 Q 10 8 20 10 M 0 5 Q 10 3 20 5 M 0 15 Q 10 13 20 15" stroke="rgba(212,165,116,0.1)" stroke-width="0.5" fill="none"/></pattern></defs><rect width="100" height="100" fill="url(%23woodpattern)"/></svg>');
+            opacity: 0.3;
         }
 
         .values-content {
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .values-content h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
+            color: #f4e4c1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .values-content h3 {
+            color: #d4a574;
         }
 
         .values-content p {
             font-size: 1.2rem;
             line-height: 2;
             opacity: 0.95;
+            color: #e6d3b7;
         }
 
         /* Footer */
         .footer {
-            background: #1a1a1a;
-            color: white;
+            background: linear-gradient(135deg, #1a0f0a 0%, #2c1810 100%);
+            color: #d4a574;
             padding: 3rem 2rem;
             text-align: center;
         }
@@ -365,12 +440,43 @@
         .footer h3 {
             font-size: 2rem;
             margin-bottom: 1rem;
-            color: #ff6b6b;
+            color: #f4e4c1;
         }
 
         .footer p {
             margin-bottom: 0.5rem;
             opacity: 0.8;
+        }
+
+        .footer a {
+            color: #d4a574;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #f4e4c1;
+        }
+
+        /* Language buttons */
+        .lang-btn {
+            font-size: 2rem;
+            margin: 0 0.5rem;
+            background: rgba(139, 69, 19, 0.3);
+            border: 2px solid rgba(212, 165, 116, 0.6);
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            color: #f4e4c1;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-btn:hover {
+            transform: scale(1.2);
+            background: rgba(160, 82, 45, 0.4);
+            border-color: #d4a574;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
         }
 
         /* Animations */
@@ -460,9 +566,17 @@
             bottom: 2rem;
             left: 50%;
             transform: translateX(-50%);
-            color: white;
+            color: #d4a574;
             opacity: 0.7;
             animation: bounce 2s infinite;
+        }
+
+        .menu-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+            display: block;
         }
 
         @keyframes bounce {
@@ -477,127 +591,139 @@
             }
         }
     </style>
-    <style>
-    .lang-btn {
-      font-size: 2rem;
-      margin: 0 0.5rem;
-      background: transparent;
-      border: 2px solid rgba(255, 255, 255, 0.6);
-      border-radius: 50px;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      color: white;
-      transition: all 0.3s ease;
-    }
-
-    .lang-btn:hover {
-      transform: scale(1.2);
-      background: rgba(255, 255, 255, 0.15);
-      border-color: #ff6b6b;
-    }
-    </style>
 </head>
 <body>
     <!-- Hero Section -->
     <section class="hero">
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="hero-bg.mp4" type="video/mp4">
+        </video>
         <div class="hero-content">
-            <div class="hero-subtitle">日式与韩式的融合</div>
-            <h1 class="hero-title">KORIAN</h1>
+            <div class="hero-subtitle">心にしみる、やさしい韓国ごはん</div>
+            <h1 class="hero-title">
+              <img src="logo.png" alt="KORIAN 로고" class="logo-image" />
+            </h1>
             <p class="hero-description">
-            放松身心的大人专属韩餐隐居地
+                “また来たくなるね”<br>
+                そんな声が自然にこぼれる、アットホームな韓国料理店です。<br>
+                おなかも、心も満たされる時間をどうぞ。<br>
             </p>
             <div class="cta-buttons">
-                <a href="https://www.instagram.com/korian_artisan?igsh=d2xsazV6cDRvanpk" target="_blank" rel="noopener noreferrer" class="btn btn-primary">查看Instagram</a>
+                <a href="https://www.instagram.com/korian_artisan?igsh=d2xsazV6cDRvanpk" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Instagramを見る</a>
             </div>
             <div class="language-buttons" style="margin-top: 2rem; text-align: center;">
-              <button class="lang-btn" onclick="changeLanguage('/ko.html')">🇰🇷</button>
-              <button class="lang-btn" onclick="changeLanguage('/en.html')">🇺🇸</button>
-              <button class="lang-btn" onclick="changeLanguage('/zh.html')">🇨🇳</button>
+                <button class="lang-btn" onclick="changeLanguage('ko.html')">🇰🇷</button>
+                <button class="lang-btn" onclick="changeLanguage('en.html')">🇺🇸</button>
+                <button class="lang-btn" onclick="changeLanguage('zh.html')">🇨🇳</button>
             </div>
         </div>
         <div class="scroll-indicator">
             <div style="font-size: 2rem;">↓</div>
-            <div style="font-size: 0.9rem;">下滑查看更多</div>
+            <div style="font-size: 0.9rem;">スクロール</div>
         </div>
     </section>
-
-    <!-- About Section -->
-    <section class="about fade-in">
-        <div class="container">
-            <h2 class="section-title">在大人私密空间享受珍贵时光</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>我们<span class="highlight">"KORIAN"</span>，即使在日本也为您奉上<strong>“正宗韩国料理”</strong>。</p>
-                    <p>绝不使用化学调味料（味精），只选用严选当季食材，带来健康又安心的美味。</p>
-                    <p>主厨来自韩国。<br>将正宗的手艺与心意，献给在日本的您。<br>请尽情享受<span class="highlight">“地道韩国味道”</span>，只有在这里才能品尝到。</p>
-                </div>
-                <div class="about-image">
-                    <div>倾注正宗手艺与心意</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Menu Section -->
     <section class="menu fade-in">
         <div class="container">
-            <h2 class="section-title" style="color: white;">招牌菜品</h2>
+            <h2 class="section-title" style="color: white;">代表料理</h2>
             <div class="menu-carousel">
                 <button class="scroll-indicator-left" onclick="scrollMenuLeft()">‹</button>
                 <button class="scroll-indicator-right" onclick="scrollMenuRight()">›</button>
                 <div class="menu-container" id="menuContainer">
                     <div class="menu-grid">
                         <div class="menu-item">
-                            <h3>石锅拌饭</h3>
-                            <p>韩餐代表作！香浓芝麻油与丰富蔬菜，搭配无添加酱料，健康美味。</p>
+                          <div class="food-image" style="background-image: url('main_yangnyeom-galbi.jpg');"></div>
+                          <h3>炭火ヤンニョムポークステーキカルビ</h3>
+                          <p>熟成ヤンニョムで漬け込んだ豚カルビを炭火で香ばしく焼き上げた、旨味たっぷりの逸品。</p>
                         </div>
                         <div class="menu-item">
-                            <h3>韩式煎饼（海鲜&葱）</h3>
-                            <p>外酥里糯。不加鸡蛋，充分展现食材本味。</p>
+                          <div class="food-image" style="background-image: url('main_bossam.jpg');"></div>
+                          <h3>漢方ボッサム（冷・温）</h3>
+                          <p>漢方素材でじっくり煮込んだ豚肉を特製キムチとともに。冷・温2種類をご用意。</p>
                         </div>
                         <div class="menu-item">
-                            <h3>嫩豆腐锅</h3>
-                            <p>豆腐的鲜美与香气，浓郁汤底。无化学调味也能品味深厚。</p>
+                          <div class="food-image" style="background-image: url('main_jeyuk-bokkeum.jpg');"></div>
+                          <h3>ジェユックポックム</h3>
+                          <p>豚バラ肉と野菜を自家製ヤンニョムで甘辛く炒めた、家庭の定番人気メニュー。</p>
                         </div>
                         <div class="menu-item">
-                            <h3>炒年糕</h3>
-                            <p>韩国街头经典。酱汁自制，吃得更安心。</p>
+                          <div class="food-image" style="background-image: url('main_gamjatang.jpg');"></div>
+                          <h3>カムジャタン</h3>
+                          <p>骨付き豚肉とじゃがいもをピリ辛スープで煮込んだ、ボリューム満点の鍋料理。</p>
                         </div>
                         <div class="menu-item">
-                            <h3>泡菜锅</h3>
-                            <p>采用发酵浓郁的正宗泡菜，鲜辣与醇厚完美平衡。</p>
-                        </div>
-                        <div class="menu-item">
-                            <h3>韩式烤牛肉（烤牛肉）</h3>
-                            <p>牛肉用特制酱料腌制，慢慢烤制，甜辣口味让人食欲大开。</p>
+                          <div class="food-image" style="background-image: url('main_jijimi.jpg');"></div>
+                          <h3>チヂミ（海鮮・じゃがいも）</h3>
+                          <p>外はカリッ、中はもちもち。旬の海鮮やじゃがいもをふんだんに使った人気の一品。</p>
                         </div>
                     </div>
                 </div>
                 <div class="scroll-hint">
                     <span class="scroll-hint-icon">→</span>
-                    <span>滑动查看更多菜品</span>
+                    <span>スワイプしてメニューをご覧ください</span>
                 </div>
             </div>
             <div class="menu-btn">
-                <a href="#" class="btn btn-primary">查看全部菜单</a>
+                <a href="menu.html" class="btn btn-primary">全メニューを見る</a>
             </div>
         </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about fade-in">
+        <div class="container">
+            <h2 class="section-title"> 本場の技と感性を、やさしい一皿に</h2>
+            <h3 style="font-size: 1.8rem; margin-top: 1rem; margin-bottom: 2rem; font-weight: 500; text-align: center;">総料理長<br>李美京（イ・ミギョン）</h3>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+古里庵の味を支えるのは、韓国出身の料理人・李美京（イ・ミギョン）。<br>
+2003年に来日し、東京・新宿伊勢丹本店内にあった韓国料理店「古家（コガ）」で10年間、総料理長を務めました。<br>
+在任中は「新宿三丁目エリアのグルメNo.1韓国料理店」として多くのメディアや食通の支持を集め、その確かな腕と味で一目置かれる存在となりました。<br><br>
+李氏の料理は、韓国伝統の知恵と技に、日本の四季と感性を加えた“和韓創作料理”。<br>
+高麗人参・なつめ・栗などを使った薬膳料理や、韓国から直送した素材、自家製発酵調味料を取り入れ、「健康」と「おいしさ」の両立を追求しています。<br><br>
+料理に向き合う姿勢は常に誠実で、「誰かを思ってつくる料理こそが、人の心と体を癒す」と話す李氏。<br>
+一皿一皿に、食べる人への想いを込めるそのスタイルは、伊勢丹時代から変わることなく、今も古里庵の厨房で息づいています。<br><br>
+<b>「飽きのこない味」「安心して食べられる料理」。</b><br>
+それは派手さではなく、丁寧さと積み重ねがつくる“毎日でも通いたくなる味”。<br>
+プロとして、そして料理を愛する一人として、李美京は今日も心を込めて厨房に立っています。
+</p>
+                </div>
+                <div class="about-image">
+                    <div>本場の技と心を込めて</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Philosophy Section -->
+    <section class="philosophy fade-in" style="padding: 5rem 2rem; background: #1C1C1E; color: #fff;">
+      <div class="container">
+        <h2 class="section-title" style="color: #f4e4c1;">古里庵のこだわり</h2>
+        <div style="margin-top: 2rem; font-size: 1.1rem; line-height: 2; background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);">
+          <p>からだに染みわたる、自然の味を。</p>
+          <p>古里庵では、化学調味料に頼らず、時間をかけて仕込んだ自家製発酵調味料を使い、素材本来の味を引き出す料理をお出ししています。</p>
+          <p>韓国の伝統と日本の感性を融合させながら、“医食同源”の考えに基づいた、からだにやさしい味を丁寧に再現しています。</p>
+          <p>自然のうま味、発酵の力、そして調和のとれた味わいを、ぜひ五感でお楽しみください。</p>
+        </div>
+      </div>
     </section>
 
     <!-- Values Section -->
     <section class="values fade-in">
         <div class="container">
             <div class="values-content">
-               <h2 style="font-size: 2.8rem; margin-bottom: 1.5rem;">静谧佇立的大人专属隐秘空间</h2>
-               <h3 style="font-size: 2rem; margin-bottom: 2rem; font-weight: 500;">邂逅地道韩国美味与真挚心意</h3>
-               <p style="font-size: 1.1rem; line-height: 2;">
-               远离喧嚣，尽享放松用餐时光。<br>
-               “KORIAN”是一个即使身在日本，也能感受韩国传统与美学的静谧韩餐隐居地。<br><br>
-               厨师长是东京新宿三丁目知名的韩餐大厨，<br>
-               运用在本土打磨出的精湛技艺与感性，结合季节食材，献上用心烹饪的美食。<br><br>
-               每一道菜，都融入了温度与故事。<br>
-               请您在此，静静品味专属于“KORIAN”的正宗韩国美味。
-               </p>
+                <h2 style="font-size: 2.8rem; margin-bottom: 1.5rem;"> 静かに佇む、 大人の隠れ家で</h2>
+                <h3 style="font-size: 2rem; margin-bottom: 2rem; font-weight: 500;">本物の韓国の味と心に出会うひととき</h3>
+                <p style="font-size: 1.1rem; line-height: 2;">
+                    喧騒を離れた空間で、心をほどく食のひとときを。<br>
+                    「KORIAN」は、日本にいながらも韓国の伝統と美意識を感じられる、静かな隠れ家です。<br><br>
+                    料理長は、東京・新宿三丁目で知られた人気韓国料理人。<br>
+                    本場で培った確かな技と感性を活かし、季節の恵みに寄り添った料理をご提供します。<br><br>
+                    ひと皿ひと皿に、温もりと物語を込めて――。<br>
+                    ここでしか出会えない“韓国の美味”を、静かに、深く味わってください。
+                </p>
             </div>
         </div>
     </section>
@@ -605,15 +731,17 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <h3>KORIAN</h3>
+            <h1 class="hero-title">
+              <img src="logo-s.png" alt="KORIAN 로고" class="footer-logo" />
+            </h1>
             <a href="https://maps.app.goo.gl/ubGPrWb3jCDZ9q95A?g_st=com.google.maps.preview.copy" target="_blank" rel="noopener noreferrer">
-              📍 〒542-0073 大阪市中央区日本桥1-4-4 日本桥Green Heights 105
+              📍 〒542-0073 大阪府大阪市中央区日本橋１丁目４−4 日本橋グリーンハイツ 105
             </a>
-            <p>近铁日本桥站[6号出口]步行1分钟</p>
-            <p>电话: 06-6211-6225</p>
-            <p>营业时间: 17:00 - 23:00（周日休息）</p>
+            <p>近鉄日本橋駅[6(日本橋駅)]徒歩1分</p>
+            <p>TEL: 06-6211-6225</p>
+            <p>営業時間: 17:00 - 23:00（日曜定休）</p>
             <br>
-            <p style="opacity: 0.6;">© 2025 KORIAN. 保留所有权利.</p>
+            <p style="opacity: 0.6;">© 2025 KORIAN. All rights reserved.</p>
         </div>
     </footer>
 
@@ -746,9 +874,11 @@
         document.head.appendChild(style);
     </script>
 </body>
+</body>
 <script>
-  function changeLanguage(url) {
-    window.location.href = window.location.origin + url;
+  function changeLanguage(filename) {
+    const baseUrl = window.location.origin;
+    window.location.href = `${baseUrl}/${filename}`;
   }
 </script>
 </html>

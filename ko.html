@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KORIAN - 정통 한국 요리</title>
+    <title>KORIAN - 본장의 한국요리</title>
     <style>
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.5;
+            pointer-events: none;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -14,14 +25,14 @@
         body {
             font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', 'Yu Gothic', 'Meiryo', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #2c1810;
             overflow-x: hidden;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d1810 50%, #8B4513 100%);
+            background: linear-gradient(135deg, #1a0f0a 0%, #2c1810 30%, #3d2417 70%, #4a2d1a 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -37,8 +48,11 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(160, 82, 45, 0.1) 0%, transparent 50%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="woodgrain" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M 0 0 L 8 0 M 0 4 L 8 4" stroke="rgba(139,69,19,0.1)" stroke-width="0.5"/><path d="M 0 2 Q 4 1 8 2 M 0 6 Q 4 5 8 6" stroke="rgba(160,82,45,0.08)" stroke-width="0.3" fill="none"/></pattern></defs><rect width="100" height="100" fill="url(%23woodgrain)"/></svg>');
+            opacity: 0.4;
         }
 
         .hero-content {
@@ -49,7 +63,7 @@
 
         .hero-subtitle {
             font-size: 1.2rem;
-            color: #ff6b6b;
+            color: #d4a574;
             margin-bottom: 1rem;
             font-weight: 300;
             letter-spacing: 3px;
@@ -58,15 +72,21 @@
         .hero-title {
             font-size: 4rem;
             font-weight: 900;
-            color: #fff;
+            color: #f4e4c1;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
             letter-spacing: 5px;
+        }
+
+        .logo-image {
+            max-width: 300px;
+            width: 80%;
+            height: auto;
         }
 
         .hero-description {
             font-size: 1.3rem;
-            color: #f0f0f0;
+            color: #e6d3b7;
             margin-bottom: 3rem;
             font-weight: 300;
             line-height: 1.8;
@@ -94,42 +114,44 @@
         }
 
         .btn-primary {
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
-            color: white;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: #f4e4c1;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
         }
 
         .btn-secondary {
             background: transparent;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.7);
+            color: #d4a574;
+            border: 2px solid rgba(212, 165, 116, 0.7);
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
         }
 
         .btn-primary:hover {
-            box-shadow: 0 6px 25px rgba(255, 107, 107, 0.6);
+            background: linear-gradient(45deg, #a0522d, #cd853f);
+            box-shadow: 0 6px 25px rgba(139, 69, 19, 0.6);
         }
 
         /* About Section */
         .about {
             padding: 5rem 2rem;
-            background: linear-gradient(180deg, #fff 0%, #f8f9fa 100%);
+            background: linear-gradient(180deg, #f4e4c1 0%, #e6d3b7 100%);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            overflow: visible;
         }
 
         .section-title {
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 3rem;
-            color: #2c3e50;
+            color: #2c1810;
             position: relative;
         }
 
@@ -141,7 +163,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            background: linear-gradient(45deg, #8b4513, #a0522d);
             border-radius: 2px;
         }
 
@@ -154,9 +176,13 @@
         }
 
         .about-text {
-            font-size: 1.1rem;
+            font-size: 14px;
             line-height: 2;
-            color: #555;
+            color: #3d2417;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
         }
 
         .about-text p {
@@ -164,29 +190,42 @@
         }
 
         .highlight {
-            color: #ff6b6b;
+            color: #8b4513;
             font-weight: 600;
         }
 
         .about-image {
             position: relative;
             height: 400px;
-            background: linear-gradient(45deg, #ff6b6b, #8B4513);
+            background: linear-gradient(45deg, #2c1810, #3d2417);
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: #d4a574;
             font-size: 1.5rem;
             font-weight: 600;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(44, 24, 16, 0.3);
+            border: 3px solid #8b4513;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="woodtexture" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="rgba(139,69,19,0.1)"/><path d="M 0 6 Q 6 4 12 6" stroke="rgba(212,165,116,0.2)" stroke-width="1" fill="none"/></pattern></defs><rect width="100" height="100" fill="url(%23woodtexture)"/></svg>');
+            border-radius: 20px;
+            opacity: 0.6;
         }
 
         /* Menu Section */
         .menu {
             padding: 5rem 2rem;
-            background: #2c3e50;
-            color: white;
+            background: linear-gradient(135deg, #2c1810 0%, #3d2417 50%, #4a2d1a 100%);
+            color: #f4e4c1;
         }
 
         .menu-carousel {
@@ -199,38 +238,52 @@
             overflow-y: hidden;
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
 
         .menu-container::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
+            display: none;
         }
 
         .menu-grid {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 2rem;
             padding: 1rem 0 2rem 0;
             min-width: max-content;
         }
 
         .menu-item {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(212, 165, 116, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 2rem;
+            padding: 1.5rem;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            min-width: 320px;
+            border: 2px solid rgba(139, 69, 19, 0.3);
+            min-width: 280px;
+            max-width: 300px;
+            height: auto;
             flex-shrink: 0;
             position: relative;
             cursor: pointer;
         }
 
+        .food-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+        }
+
         .menu-item:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            background: rgba(212, 165, 116, 0.2);
+            border-color: #8b4513;
         }
 
         .menu-item::before {
@@ -240,7 +293,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            background: linear-gradient(45deg, #8b4513, #a0522d);
             border-radius: 20px 20px 0 0;
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -253,13 +306,14 @@
         .menu-item h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #ff6b6b;
+            color: #d4a574;
         }
 
         .menu-item p {
             font-size: 1rem;
             line-height: 1.8;
             opacity: 0.9;
+            color: #e6d3b7;
         }
 
         .scroll-indicator-left,
@@ -267,9 +321,9 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 107, 107, 0.9);
-            color: white;
-            border: none;
+            background: rgba(139, 69, 19, 0.9);
+            color: #f4e4c1;
+            border: 2px solid #8b4513;
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -294,15 +348,15 @@
 
         .scroll-indicator-left:hover,
         .scroll-indicator-right:hover {
-            background: #ff6b6b;
+            background: #a0522d;
             transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.5);
         }
 
         .scroll-hint {
             text-align: center;
             margin-top: 2rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(212, 165, 116, 0.8);
             font-size: 0.9rem;
             display: flex;
             align-items: center;
@@ -328,31 +382,52 @@
         /* Values Section */
         .values {
             padding: 5rem 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #8b4513 0%, #6b3410 50%, #4a2d1a 100%);
+            color: #f4e4c1;
+            position: relative;
+        }
+
+        .values::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="woodpattern" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 0 10 Q 10 8 20 10 M 0 5 Q 10 3 20 5 M 0 15 Q 10 13 20 15" stroke="rgba(212,165,116,0.1)" stroke-width="0.5" fill="none"/></pattern></defs><rect width="100" height="100" fill="url(%23woodpattern)"/></svg>');
+            opacity: 0.3;
         }
 
         .values-content {
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .values-content h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
+            color: #f4e4c1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .values-content h3 {
+            color: #d4a574;
         }
 
         .values-content p {
             font-size: 1.2rem;
             line-height: 2;
             opacity: 0.95;
+            color: #e6d3b7;
         }
 
         /* Footer */
         .footer {
-            background: #1a1a1a;
-            color: white;
+            background: linear-gradient(135deg, #1a0f0a 0%, #2c1810 100%);
+            color: #d4a574;
             padding: 3rem 2rem;
             text-align: center;
         }
@@ -365,12 +440,43 @@
         .footer h3 {
             font-size: 2rem;
             margin-bottom: 1rem;
-            color: #ff6b6b;
+            color: #f4e4c1;
         }
 
         .footer p {
             margin-bottom: 0.5rem;
             opacity: 0.8;
+        }
+
+        .footer a {
+            color: #d4a574;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #f4e4c1;
+        }
+
+        /* Language buttons */
+        .lang-btn {
+            font-size: 2rem;
+            margin: 0 0.5rem;
+            background: rgba(139, 69, 19, 0.3);
+            border: 2px solid rgba(212, 165, 116, 0.6);
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            color: #f4e4c1;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-btn:hover {
+            transform: scale(1.2);
+            background: rgba(160, 82, 45, 0.4);
+            border-color: #d4a574;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
         }
 
         /* Animations */
@@ -460,9 +566,17 @@
             bottom: 2rem;
             left: 50%;
             transform: translateX(-50%);
-            color: white;
+            color: #d4a574;
             opacity: 0.7;
             animation: bounce 2s infinite;
+        }
+
+        .menu-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+            display: block;
         }
 
         @keyframes bounce {
@@ -477,60 +591,104 @@
             }
         }
     </style>
-    <style>
-    .lang-btn {
-      font-size: 2rem;
-      margin: 0 0.5rem;
-      background: transparent;
-      border: 2px solid rgba(255, 255, 255, 0.6);
-      border-radius: 50px;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      color: white;
-      transition: all 0.3s ease;
-    }
-
-    .lang-btn:hover {
-      transform: scale(1.2);
-      background: rgba(255, 255, 255, 0.15);
-      border-color: #ff6b6b;
-    }
-    </style>
 </head>
 <body>
     <!-- Hero Section -->
     <section class="hero">
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="hero-bg.mp4" type="video/mp4">
+        </video>
         <div class="hero-content">
-            <div class="hero-subtitle">한국과 일본의 조화</div>
-            <h1 class="hero-title">KORIAN</h1>
+            <div class="hero-subtitle">마음에 스며드는 따뜻한 한국 밥상</div>
+            <h1 class="hero-title">
+              <img src="logo.png" alt="KORIAN 로고" class="logo-image" />
+            </h1>
             <p class="hero-description">
-                마음을 녹이는, 어른들의 아지트 한국요리
+                일본 오사카, 한국 가정식 맛집<br>
+                정성껏 만든 한식과 일본풍의 감성이 어우러진 ‘코리안(KORIAN)’에서 따뜻한 식사를 즐겨보세요.<br>
+                닛폰바시역에서 도보 1분!<br>
             </p>
             <div class="cta-buttons">
-                <a href="https://www.instagram.com/korian_artisan?igsh=d2xsazV6cDRvanpk" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Instagram 바로가기</a>
+                <a href="https://www.instagram.com/korian_artisan?igsh=d2xsazV6cDRvanpk" target="_blank" rel="noopener noreferrer" class="btn btn-primary">인스타그램 보기</a>
             </div>
             <div class="language-buttons" style="margin-top: 2rem; text-align: center;">
-              <button class="lang-btn" onclick="changeLanguage('ko.html')">🇰🇷</button>
-              <button class="lang-btn" onclick="changeLanguage('en.html')">🇺🇸</button>
-              <button class="lang-btn" onclick="changeLanguage('zh.html')">🇨🇳</button>
+                <button class="lang-btn" onclick="changeLanguage('ko.html')">🇰🇷</button>
+                <button class="lang-btn" onclick="changeLanguage('en.html')">🇺🇸</button>
+                <button class="lang-btn" onclick="changeLanguage('zh.html')">🇨🇳</button>
             </div>
         </div>
         <div class="scroll-indicator">
             <div style="font-size: 2rem;">↓</div>
-            <div style="font-size: 0.9rem;">아래로</div>
-        
+            <div style="font-size: 0.9rem;">스크롤</div>
+        </div>
+    </section>
+    
+    <!-- Menu Section -->
+    <section class="menu fade-in">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">대표 요리</h2>
+            <div class="menu-carousel">
+                <button class="scroll-indicator-left" onclick="scrollMenuLeft()">‹</button>
+                <button class="scroll-indicator-right" onclick="scrollMenuRight()">›</button>
+                <div class="menu-container" id="menuContainer">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                          <div class="food-image" style="background-image: url('main_yangnyeom-galbi.jpg');"></div>
+                          <h3>양념갈비</h3>
+                          <p>숙성 양념에 재운 돼지갈비를 숯불에 구워내 깊은 풍미를 살린 대표 메뉴입니다.</p>
+                        </div>
+                        <div class="menu-item">
+                          <div class="food-image" style="background-image: url('main_bossam.jpg');"></div>
+                          <h3>한방 보쌈, 냉보쌈</h3>
+                          <p>한방 재료로 부드럽게 삶아낸 돼지고기에 특제 김치를 곁들였습니다. 냉/온 두 가지로 준비됩니다.</p>
+                        </div>
+                        <div class="menu-item">
+                          <div class="food-image" style="background-image: url('main_jeyuk-bokkeum.jpg');"></div>
+                          <h3>제육볶음</h3>
+                          <p>돼지고기와 신선한 채소를 직접 만든 양념으로 달콤매콤하게 볶아낸 집밥의 인기 메뉴입니다.</p>
+                        </div>
+                        <div class="menu-item">
+                          <div class="food-image" style="background-image: url('main_gamjatang.jpg');"></div>
+                          <h3>감자탕</h3>
+                          <p>뼈 있는 돼지고기와 감자를 매콤한 육수에 푹 끓인 푸짐한 전골 요리입니다.</p>
+                        </div>
+                        <div class="menu-item">
+                          <div class="food-image" style="background-image: url('main_jijimi.jpg');"></div>
+                          <h3>지짐이 (해물/감자)</h3>
+                          <p>겉은 바삭, 속은 쫄깃! 제철 해물과 감자를 듬뿍 넣은 인기 전 입니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-hint">
+                    <span class="scroll-hint-icon">→</span>
+                    <span>옆으로 넘겨 대표 메뉴를 확인하세요</span>
+                </div>
+            </div>
+            <div class="menu-btn">
+                <a href="menu-ko.html" class="btn btn-primary">전체 메뉴 보기</a>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="about fade-in">
         <div class="container">
-            <h2 class="section-title">어른들의 아지트, 소중한 시간을</h2>
+            <h2 class="section-title">정통의 기술과 감성을 담은 따뜻한 한 접시</h2>
+            <h3 style="font-size: 1.8rem; margin-top: 1rem; margin-bottom: 2rem; font-weight: 500; text-align: center;">총괄셰프<br>이미경</h3>
             <div class="about-content">
                 <div class="about-text">
-                    <p>저희 <span class="highlight">"KORIAN"</span>은 일본에서도 <strong>"진짜 한국 요리"</strong>를 제공합니다.</p>
-                    <p>화학조미료(MSG)는 일절 사용하지 않고, 엄선한 제철 재료만을 사용하여 몸과 마음 모두에 좋은 요리를 전합니다.</p>
-                    <p>주방장은 한국 출신.<br>정통의 기술과 마음을 일본 고객님께.<br>여기서만 맛볼 수 있는 <span class="highlight">"진짜 한국의 맛"</span>을 경험해 보세요.</p>
+                    <p>
+코리안의 맛을 책임지는 이는 한국 출신 요리사 이미경입니다.<br>
+2003년 일본에 건너와 도쿄 신주쿠 이세탄 본점 내 한국요리 전문점 '「古家（고가）」'에서 10년간 총괄셰프로 활약하였습니다.<br>
+재임 기간 동안 ‘신주쿠 3초메 지역 최고의 한국요리집’으로 다양한 미디어와 미식가들의 사랑을 받으며, 실력과 맛으로 인정받았습니다.<br><br>
+이 셰프의 요리는 한국 전통의 지혜와 기술에 일본의 사계와 감성을 더한 ‘한·일 창작요리’입니다.<br>
+고려인삼, 대추, 밤 등 한방 재료와 한국에서 직송한 식재료, 직접 만든 발효 양념을 활용해 ‘건강’과 ‘맛’을 모두 추구합니다.<br><br>
+항상 성실함으로 요리에 임하며, “누군가를 생각하며 만드는 음식이야말로 사람의 마음과 몸을 치유한다”고 말합니다.<br>
+한 접시 한 접시에 먹는 이를 향한 마음을 담는 그 스타일은 이세탄 시절부터 변함없이 지금도 코리안의 주방에서 이어지고 있습니다.<br><br>
+<b>“질리지 않는 맛”, “안심하고 먹을 수 있는 요리”.</b><br>
+화려함보다 정성과 축적이 만들어내는 ‘매일 오고 싶은 맛’.<br>
+프로로서, 그리고 요리를 사랑하는 한 사람으로서 이미경 셰프는 오늘도 정성을 다해 주방에 서 있습니다.
+</p>
                 </div>
                 <div class="about-image">
                     <div>정통의 기술과 마음을 담아</div>
@@ -539,66 +697,33 @@
         </div>
     </section>
 
-    <!-- Menu Section -->
-    <section class="menu fade-in">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">대표 메뉴</h2>
-            <div class="menu-carousel">
-                <button class="scroll-indicator-left" onclick="scrollMenuLeft()">‹</button>
-                <button class="scroll-indicator-right" onclick="scrollMenuRight()">›</button>
-                <div class="menu-container" id="menuContainer">
-                    <div class="menu-grid">
-                        <div class="menu-item">
-                            <h3>돌솥비빔밥</h3>
-                            <p>한국을 대표하는 비빔밥! 고소한 참기름 향과 풍성한 채소, 무첨가 양념으로 건강하게 완성합니다.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h3>해물파전</h3>
-                            <p>겉은 바삭, 속은 쫄깃. 계란 없이 재료 본연의 맛을 살렸습니다.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h3>순두부찌개</h3>
-                            <p>두부의 고소함과 깊은 국물 맛. 화학조미료 없이도 진한 풍미를 느낄 수 있습니다.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h3>떡볶이</h3>
-                            <p>한국 길거리 대표 간식. 달콤매콤한 소스도 직접 만들어 안심하고 드실 수 있습니다.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h3>김치찌개</h3>
-                            <p>발효의 깊은 맛이 응축된 정통 김치 사용. 진한 감칠맛과 매운맛의 조화가 일품입니다.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h3>불고기</h3>
-                            <p>특제 양념에 재운 소고기를 정성껏 구워냈습니다. 달콤매콤한 맛이 식욕을 자극합니다.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="scroll-hint">
-                    <span class="scroll-hint-icon">→</span>
-                    <span>좌우로 스와이프하여 메뉴를 확인하세요</span>
-                </div>
-            </div>
-            <div class="menu-btn">
-                <a href="#" class="btn btn-primary">전체 메뉴 보기</a>
-            </div>
+        <!-- Philosophy Section -->
+    <section class="philosophy fade-in" style="padding: 5rem 2rem; background: #1C1C1E; color: #fff;">
+      <div class="container">
+        <h2 class="section-title" style="color: #f4e4c1;">코리안의 고집</h2>
+        <div style="margin-top: 2rem; font-size: 1.1rem; line-height: 2; background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);">
+          <p>몸에 스며드는 자연 그대로의 맛을 위해.</p>
+          <p>코리안은 화학조미료에 의존하지 않고, 오랜 시간 정성껏 만든 직접 발효 양념을 사용해 식재료 본연의 맛을 살립니다.</p>
+          <p>한국의 전통과 일본의 감성을 조화롭게 담아내며, '약식동원'의 철학으로 건강하고 순한 맛을 정성껏 재현합니다.</p>
+          <p>자연의 감칠맛, 발효의 힘, 그리고 조화로운 풍미를 오감으로 느껴보세요.</p>
         </div>
+      </div>
     </section>
 
     <!-- Values Section -->
     <section class="values fade-in">
         <div class="container">
             <div class="values-content">
-               <h2 style="font-size: 2.8rem; margin-bottom: 1.5rem;">조용히 머무는 어른들의 아지트</h2>
-               <h3 style="font-size: 2rem; margin-bottom: 2rem; font-weight: 500;">진짜 한국의 맛과 마음을 만나는 시간</h3>
-               <p style="font-size: 1.1rem; line-height: 2;">
-               번잡함을 벗어난 공간에서 마음을 풀어보세요.<br>
-               'KORIAN'은 일본에 있으면서도 한국의 전통과 맛을 느낄 수 있는 조용한 아지트입니다.<br><br>
-               요리장은 도쿄 신주쿠 3초메에서 알려진 인기 한식 요리사로,<br>
-               한국에서 쌓은 탄탄한 실력과 감각을 살려 제철 재료를 활용한 요리를 선보입니다.<br><br>
-               한 접시 한 접시에 따뜻함과 이야기를 담아냅니다.<br>
-               여기서만 만날 수 있는 <b>'진짜 한국의 맛'</b>을 조용하고 깊게 음미해보세요.
-               </p>
+                <h2 style="font-size: 2.8rem; margin-bottom: 1.5rem;">조용히 머무는 어른들의 아지트에서</h2>
+                <h3 style="font-size: 2rem; margin-bottom: 2rem; font-weight: 500;">진짜 한국의 맛과 마음을 만나는 시간</h3>
+                <p style="font-size: 1.1rem; line-height: 2;">
+                    번잡함에서 벗어난 공간에서 마음이 풀리는 식사의 순간을.<br>
+                    ‘KORIAN’은 일본에 있으면서도 한국의 전통과 미의식을 느낄 수 있는 조용한 아지트입니다.<br><br>
+                    주방장은 도쿄 신주쿠 3초메에서 이름난 인기 한국요리 전문가.<br>
+                    본고장에서 다진 실력과 감성으로, 계절의 선물을 담은 요리를 선보입니다.<br><br>
+                    한 접시 한 접시에 온기와 이야기를 담아―.<br>
+                    이곳에서만 만날 수 있는 ‘진짜 한국의 맛’을 조용히 깊게 음미해보세요.
+                </p>
             </div>
         </div>
     </section>
@@ -606,13 +731,15 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <h3>KORIAN</h3>
+            <h1 class="hero-title">
+              <img src="logo-s.png" alt="KORIAN 로고" class="footer-logo" />
+            </h1>
             <a href="https://maps.app.goo.gl/ubGPrWb3jCDZ9q95A?g_st=com.google.maps.preview.copy" target="_blank" rel="noopener noreferrer">
-              📍 〒542-0073 오사카시 주오구 닛폰바시 1-4-4 일본바시 그린 하이츠 105호
+              📍 〒542-0073 大阪府大阪市中央区日本橋１丁目４−4 日本橋グリーンハイツ 105
             </a>
-            <p>킨테츠 닛폰바시역[6번 출구] 도보 1분</p>
+            <p>近鉄日本橋駅[6(日本橋駅)]徒歩1分</p>
             <p>TEL: 06-6211-6225</p>
-            <p>영업시간: 17:00 - 23:00 (일요일 휴무)</p>
+            <p>営業時間: 17:00 - 23:00（日曜定休）</p>
             <br>
             <p style="opacity: 0.6;">© 2025 KORIAN. All rights reserved.</p>
         </div>
@@ -747,9 +874,11 @@
         document.head.appendChild(style);
     </script>
 </body>
+</body>
 <script>
-  function changeLanguage(url) {
-    window.location.href = url;
+  function changeLanguage(filename) {
+    const baseUrl = window.location.origin;
+    window.location.href = `${baseUrl}/${filename}`;
   }
 </script>
 </html>
