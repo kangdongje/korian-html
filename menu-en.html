@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>korian</title>
     <style>
         .section-header {
@@ -23,7 +23,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 2px;
-            background: linear-gradient(90deg, transparent, #D4A574, transparent);
+            background: linear-gradient(90deg,transparent,#D4A574,transparent);
         }
         * {
             margin: 0;
@@ -32,8 +32,8 @@
         }
 
         body {
-            font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
-            background: linear-gradient(135deg, #2C1810 0%, #3E2723 50%, #4A2C20 100%);
+            font-family: 'Segoe UI','Malgun Gothic',sans-serif;
+            background: linear-gradient(135deg,#2C1810 0%,#3E2723 50%,#4A2C20 100%);
             color: #F5E6D3;
             line-height: 1.6;
             overflow-x: hidden;
@@ -50,7 +50,7 @@
             padding: 80px 0 100px;
             text-align: center;
             position: relative;
-            background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);
+            background: radial-gradient(circle at center,rgba(255,255,255,0.05) 0%,transparent 70%);
         }
 
         .header-ornament {
@@ -60,7 +60,7 @@
             transform: translateX(-50%);
             width: 100px;
             height: 4px;
-            background: linear-gradient(90deg, transparent 0%, #D4A574 50%, transparent 100%);
+            background: linear-gradient(90deg,transparent 0%,#D4A574 50%,transparent 100%);
             border-radius: 2px;
         }
 
@@ -68,11 +68,11 @@
             font-size: 4rem;
             font-weight: 300;
             margin-bottom: 20px;
-            background: linear-gradient(45deg, #D4A574, #F4E4BC);
+            background: linear-gradient(45deg,#D4A574,#F4E4BC);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 2px 20px rgba(212, 165, 116, 0.3);
+            text-shadow: 0 2px 20px rgba(212,165,116,0.3);
             letter-spacing: 0.1em;
         }
 
@@ -87,26 +87,26 @@
         /* Menu Grid */
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
             gap: 40px;
             padding: 60px 0;
         }
 
         .menu-item {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255,255,255,0.08);
             border-radius: 20px;
             overflow: hidden;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 165, 116, 0.2);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(212,165,116,0.2);
+            transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
             position: relative;
             group: hover;
         }
 
         .menu-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 30px rgba(212, 165, 116, 0.2);
-            border-color: rgba(212, 165, 116, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3),0 0 30px rgba(212,165,116,0.2);
+            border-color: rgba(212,165,116,0.4);
         }
 
         .menu-item::before {
@@ -116,7 +116,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, #D4A574, #F4E4BC, #D4A574);
+            background: linear-gradient(90deg,#D4A574,#F4E4BC,#D4A574);
             transform: scaleX(0);
             transition: transform 0.4s ease;
         }
@@ -128,7 +128,7 @@
         .food-image {
             width: 100%;
             height: 250px;
-            background: linear-gradient(45deg, #8B4513, #A0522D, #CD853F);
+            background: linear-gradient(45deg,#8B4513,#A0522D,#CD853F);
             position: relative;
             overflow: hidden;
         }
@@ -137,8 +137,8 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 70%, rgba(212, 165, 116, 0.3) 0%, transparent 50%);
+            background: radial-gradient(circle at 30% 30%,rgba(255,255,255,0.2) 0%,transparent 50%),
+                        radial-gradient(circle at 70% 70%,rgba(212,165,116,0.3) 0%,transparent 50%);
         }
 
         .food-image::after {
@@ -146,7 +146,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%,-50%);
             font-size: 3rem;
             opacity: 0.6;
             filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3));
@@ -154,6 +154,13 @@
 
         .food-image:has(img)::after {
             display: none;
+        }
+
+        .food-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .menu-content {
@@ -198,7 +205,7 @@
             left: 10%;
             width: 60px;
             height: 60px;
-            background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle,rgba(212,165,116,0.1) 0%,transparent 70%);
             border-radius: 50%;
             animation: float 6s ease-in-out infinite;
         }
@@ -208,7 +215,7 @@
             right: 15%;
             width: 40px;
             height: 40px;
-            background: radial-gradient(circle, rgba(244, 228, 188, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle,rgba(244,228,188,0.1) 0%,transparent 70%);
             border-radius: 50%;
             animation: float 8s ease-in-out infinite reverse;
         }
@@ -218,13 +225,13 @@
             left: 20%;
             width: 80px;
             height: 80px;
-            background: radial-gradient(circle, rgba(212, 165, 116, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle,rgba(212,165,116,0.08) 0%,transparent 70%);
             border-radius: 50%;
             animation: float 10s ease-in-out infinite;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            0%,100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(180deg); }
         }
 
@@ -232,7 +239,7 @@
         footer {
             text-align: center;
             padding: 60px 0 40px;
-            border-top: 1px solid rgba(212, 165, 116, 0.2);
+            border-top: 1px solid rgba(212,165,116,0.2);
             margin-top: 80px;
         }
 
@@ -293,6 +300,15 @@
             <div class="header-ornament"></div>
             <h1><img src="logo.png" alt="KORIAN ロゴ" class="logo-image" /></h1>
             <p class="subtitle"></p>
+            <p class="subtitle">For reservations,<br><strong style="font-size: 1.2em;">📞 Call us</strong> or<br><strong style="font-size: 1.2em;">📩 Send a DM on Instagram</strong>.<br>Thank you! </p>
+            <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px;">
+              <a href="tel:0662116225" style="display: inline-block; padding: 12px 24px; background-color: #F4E4BC; color: #2C1810; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: background-color 0.3s;">
+                📞 お電話
+              </a>
+              <a href="https://www.instagram.com/korian_artisan" target="_blank" style="display: inline-block; padding: 12px 24px; background-color: #F4E4BC; color: #2C1810; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: background-color 0.3s;">
+                📩 Instagram DM
+              </a>
+            </div>
         </div>
     </header>
     <main>
@@ -300,18 +316,31 @@
         <div class="container">
          <h2 class="section-header">Recommended Dishes</h2>
          <div class="menu-grid">
+          <div class="menu-item">
+             <div class="food-image">
+              <img src="menu_bossam.jpg" alt="한방보쌈" loading="lazy" decoding="async" />
+            </div>
+            <div class="menu-content">
+              <div class="dish-name-ko">한방보쌈</div>
+              <h2 class="dish-name">Herbal Bossam</h2>
+              <p class="dish-description"><span style="color: red; font-weight: bold;">Popular No.1</span><br>
+                Sliced pork boiled with medicinal herbs. Perfect for sharing between 2 to 3 people.  </p>
+            </div>
+          </div>
+          <div class="menu-item">
+             <div class="food-image">
+              <img src="menu_japchae.jpg" alt="잡채" loading="lazy" decoding="async" />
+            </div>
+          <div class="menu-content">
+            <div class="dish-name-ko">잡채</div>
+             <h2 class="dish-name">Japchae (Stir-fried Glass Noodles)</h2>
+            <p class="dish-description">Stir-fried glass noodles with vegetables and thinly sliced beef in a soy sauce seasoning.<BR> </p>
+            </div>
+          </div>
            <div class="menu-item">
              <div class="food-image">
-              <img src="menu_japchae.jpg" alt="잡채" style="width: 100%; height: 100%; object-fit: cover;" />
+              <img src="menu_haemul-pajeon.jpg" alt="해물파전" loading="lazy" decoding="async" />
              </div>
-             <div class="menu-content">
-               <div class="dish-name-ko">잡채</div>
-               <h2 class="dish-name">Japchae (Glass Noodle Stir-fry)</h2>
-               <p class="dish-description">Korean glass noodles stir-fried with carrots, thinly sliced beef, and vegetables in a soy-based sauce.</p>
-             </div>
-           </div>
-           <div class="menu-item">
-             <div class="food-image"></div>
              <div class="menu-content">
                <div class="dish-name-ko">해물파전</div>
                <h2 class="dish-name">Seafood Pancake</h2>
@@ -320,270 +349,92 @@
            </div>
            <div class="menu-item">
              <div class="food-image">
-               <img src="menu_gamja-jeon.jpg" alt="감자전" style="width: 100%; height: 100%; object-fit: cover;" />
+               <img src="menu_gamja-jeon.jpg" alt="감자전" loading="lazy" decoding="async" />
              </div>
              <div class="menu-content">
                <div class="dish-name-ko">감자전</div>
                <h2 class="dish-name">Potato Pancake</h2>
-               <p class="dish-description">Thin, crispy Korean potato pancake.</p>
-               <div class="dish-name-ko" style="margin-top:10px;">ニラチヂミ(부추전)</div>
+               <p class="dish-description">Thin and crispy Korean-style potato pancake.</p>
+               <div class="dish-name-ko" style="margin-top:10px;">Nira Pancake(부추전): Chive pancake</div>
              </div>
            </div>
            <div class="menu-item">
             <div class="food-image">
-             <img src="menu_ojingeohoe-muchim.jpg" alt="오징어무침" style="width: 100%; height: 100%; object-fit: cover;" />
+             <img src="menu_ojingeohoe-muchim.jpg" alt="오징어무침" loading="lazy" decoding="async" />
             </div>
              <div class="menu-content">
-               <div class="dish-name-ko">오징어무침</div>
-               <h2 class="dish-name">Spicy Squid Salad</h2>
-               <p class="dish-description">Sweet, spicy, and tangy marinated squid salad.</p>
-             </div>
-           </div>
-           <div class="menu-item">
-             <div class="food-image"></div>
-             <div class="menu-content">
-               <div class="dish-name-ko">오징어볶음</div>
-               <h2 class="dish-name">Stir-fried Spicy Squid</h2>
-               <p class="dish-description">Squid and vegetables stir-fried in a spicy gochujang sauce.</p>
+               <div class="dish-name-ko">오징어회무침</div>
+               <h2 class="dish-name">Ojingeo Muchim</h2>
+               <p class="dish-description">Spicy and tangy seasoned squid salad.<BR> </p>
              </div>
            </div>
            <div class="menu-item">
              <div class="food-image">
-               <img src="menu_jeyuk-bokkeum.jpg" alt="제육볶음" style="width: 100%; height: 100%; object-fit: cover;" />
+               <img src="menu_jeyuk-bokkeum.jpg" alt="제육볶음" loading="lazy" decoding="async" />
              </div>
              <div class="menu-content">
                <div class="dish-name-ko">제육볶음</div>
-               <h2 class="dish-name">Spicy Pork Stir-fry</h2>
-               <p class="dish-description">Home-style stir-fried pork belly and vegetables in a sweet and spicy sauce. ※Popular No.3</p>
+               <h2 class="dish-name">Jeyuk Bokkeum</h2>
+               <p class="dish-description"><span style="color: red; font-weight: bold;">Popular No.3</span><br>
+                Stir-fried spicy pork belly and vegetables. A savory and appetizing homemade dish. </p>
              </div>
            </div>
            <div class="menu-item">
              <div class="food-image">
-               <img src="menu_bossam.jpg" alt="漢方ボッサム" style="width: 100%; height: 100%; object-fit: cover;" />
-             </div>
-             <div class="menu-content">
-               <div class="dish-name-ko">한방보쌈</div>
-               <h2 class="dish-name">Herbal Bossam (Boiled Pork Wraps)</h2>
-               <p class="dish-description">Boiled pork with medicinal herbs, eaten wrapped with kimchi. ※Popular No.1</p>
-             </div>
-           </div>
-           <div class="menu-item">
-             <div class="food-image">
-               <img src="menu_gyeran-jjim.jpg" alt="계란찜" style="width: 100%; height: 100%; object-fit: cover;" />
-             </div>
-             <div class="menu-content">
-               <div class="dish-name-ko">뚝배기계란찜</div>
-               <h2 class="dish-name">Steamed Egg (Gyeran Jjim)</h2>
-               <p class="dish-description">Fluffy steamed egg custard with broth, green onions, carrots, and more, cooked in a hot stone bowl.</p>
-             </div>
-           </div>
-           <div class="menu-item">
-             <div class="food-image">
-               <img src="menu_nakji-bokkeum.jpg" alt="낙지볶음" style="width: 100%; height: 100%; object-fit: cover;" />
+               <img src="menu_nakji-bokkeum.jpg" alt="낙지볶음" loading="lazy" decoding="async" />
              </div>
              <div class="menu-content">
                <div class="dish-name-ko">낙지볶음</div>
-               <h2 class="dish-name">Spicy Stir-fried Octopus</h2>
-               <p class="dish-description">Stir-fried long-legged octopus in spicy sauce. ※Popular No.2</p>
+               <h2 class="dish-name">Spicy Nakji Bokkeum</h2>
+               <p class="dish-description"><span style="color: red; font-weight: bold;">Popular No.2</span><br>
+                Stir-fried spicy octopus. Perfect as a side dish with rice or as a snack with drinks. </p>
              </div>
            </div>
-           <div class="menu-item">
-             <div class="food-image">
-                <img src="menu_kimchi-set.jpg" alt="김치모리" style="width: 100%; height: 100%; object-fit: cover;" />
-                </div>
-             <div class="menu-content">
-               <div class="dish-name-ko">김치세트</div>
-               <h2 class="dish-name">Kimchi Trio</h2>
-               <p class="dish-description">Assortment of napa cabbage, radish, and cucumber kimchi. (A la carte: 700 yen)</p>
-             </div>
-           </div>
-           <div class="menu-item">
-             <div class="food-image">
-               <img src="menu_namul-set.jpg" alt="나물세트" style="width: 100%; height: 100%; object-fit: cover;" />
-             </div>
-             <div class="menu-content">
-               <div class="dish-name-ko">나물세트</div>
-               <h2 class="dish-name">Namul Trio</h2>
-               <p class="dish-description">Assortment of seasoned boiled vegetables with ground sesame, spices, and sesame oil. (A la carte: 700 yen)</p>
-             </div>
-           </div>
-           <div class="menu-item">
-             <div class="food-image"></div>
-             <div class="menu-content">
-               <div class="dish-name-ko">불고기</div>
-               <h2 class="dish-name">Bulgogi</h2>
-               <p class="dish-description">Classic Korean dish of thinly sliced beef marinated with vegetables in a sweet and savory sauce, then stir-fried.</p>
-             </div>
-           </div>
-         <p style="text-align:center;"></p>
-        </div>
-        </div>
-  <!-- おすすめ料理【鍋・チゲ】 -->
-        <div class="container">
-          <h2 class="section-header">Recommended Dishes<br>[Hot Pots & Stews]</h2>
-          <div class="menu-grid">
-            <div class="menu-item">
-              <div class="food-image"></div>
-              <div class="menu-content">
-                <div class="dish-name-ko">부대찌개</div>
-                <h2 class="dish-name">Budae Jjigae (Army Stew)</h2>
-                <p class="dish-description">
-                  A popular Korean hot pot with sausage, SPAM (luncheon meat), vegetables, rice cakes, tofu, and more simmered together.
-                </p>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="food-image"></div>
-              <div class="menu-content">
-                <div class="dish-name-ko">불낙전골</div>
-                <h2 class="dish-name">Bulgogi & Octopus Hot Pot</h2>
-                <p class="dish-description">
-                  Sweet, tender beef and spicy, chewy octopus come together in perfect harmony in this hot pot.
-                </p>
-              </div>
-            </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_gamjatang.jpg" alt="감자탕" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_gamjatang.jpg" alt="감자탕" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">감자탕</div>
-                <h2 class="dish-name">Gamjatang (Pork Bone Soup)</h2>
+                <h2 class="dish-name">Gamjatang</h2>
                 <p class="dish-description">
-                  Spicy hot pot of pork neck or back bones, potatoes, leafy greens, and vegetables simmered in a rich broth.
+                <span style="color: red; font-weight: bold;">[Reservation]</span> Pork back-bone stew: pork neck or back bones simmered with potatoes and leafy vegetables in a spicy broth. 
+                </p>
+              </div>
+            </div>
+           <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_bulnak-jeongol.jpg" alt="불낙전골" loading="lazy" decoding="async" />
+              </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">불낙전골</div>
+                <h2 class="dish-name">Bulnak Jeongol</h2>
+                <p class="dish-description">
+                  Hot pot with beef and octopus. The tender sweet beef and spicy, chewy octopus create a perfect harmony. 
                 </p>
               </div>
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_haemul-tang.jpg" alt="해물탕" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_haemul-tang.jpg" alt="해물탕" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">해물탕</div>
                 <h2 class="dish-name">Special Seafood Hot Pot</h2>
                 <p class="dish-description">
-                  Assorted seafood and vegetables such as dropwort, green onion, and daikon, simmered in a spicy gochujang-based broth.
+                <span style="color: red; font-weight: bold;">[Reservation]</span> Haemultang (Seafood Hot Pot): A variety of seafood and vegetables simmered in a gochujang (spicy chili paste) broth.
                 </p>
               </div>
             </div>
             <div class="menu-item">
-              <div class="food-image"></div>
+              <div class="food-image">
+                <img src="menu_dakbokkeum-tang.jpg" alt="닭볶음탕" loading="lazy" decoding="async" />
+              </div>
               <div class="menu-content">
                 <div class="dish-name-ko">닭볶음탕</div>
-                <h2 class="dish-name">Dakbokkeumtang (Spicy Chicken Stew)</h2>
+                <h2 class="dish-name">Dakbokkeumtang</h2>
                 <p class="dish-description">
-                  Chicken, potatoes, and carrots simmered in a spicy chili sauce. A Korean-style meat and potato stew.
-                </p>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="food-image">
-                <img src="menu_samgyetang.jpg" alt="삼계탕" style="width: 100%; height: 100%; object-fit: cover;" />
-              </div>
-              <div class="menu-content">
-                <div class="dish-name-ko">삼계탕</div>
-                <h2 class="dish-name">Samgyetang (Ginseng Chicken Soup)</h2>
-                <p class="dish-description">
-                  Whole chicken stuffed with ginseng, glutinous rice, pine nuts, and more, simmered into a nourishing soup.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-                <!-- 焼肉メニュー -->
-        <div class="container">
-          <h2 class="section-header">BBQ Menu</h2>
-          <div class="menu-grid">
-            <div class="menu-item">
-              <div class="food-image">
-                <img src="menu_yangnyeom-galbi.jpg" alt="양념갈비" style="width: 100%; height: 100%; object-fit: cover;" />
-              </div>
-              <div class="menu-content">
-                <div class="dish-name-ko">양념 갈비</div>
-                <h2 class="dish-name">Charcoal Grilled Marinated Pork Rib Steak</h2>
-                <p class="dish-description">
-                  Aged marinated pork rib steak, served with Korean side dishes, sliced cabbage, pickled radish, vegetables & seasoned soybean paste. Optional add-ons: miso stew, cold noodles, extra cabbage, and more.
-                </p>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="food-image">
-                <img src="menu_samgyeopsal.jpg" alt="삼겹살" style="width: 100%; height: 100%; object-fit: cover;" />
-              </div>
-              <div class="menu-content">
-                <div class="dish-name-ko">삼겹살</div>
-                <h2 class="dish-name">Samgyeopsal (Pork Belly BBQ)</h2>
-                <p class="dish-description">
-                  Sangen pork belly, Korean side dishes, cabbage salad, grilled kimchi, sliced garlic & vegetables, and condiment set. Optional add-ons: miso stew, fried rice, perilla leaves, extra grilled kimchi, and more.
-                </p>
-              </div>
-            </div>
-          </div>
-          <p style="text-align: center;">※Minimum order: 2 servings</p>
-        </div>
-        <!-- 예약메뉴 -->
-        <div class="container">
-          <h2 class="section-header">Reservation Menu</h2>
-          <div class="menu-grid">
-            <div class="menu-item">
-              <div class="food-image">
-                <img src="menu_ganjang-gejang.jpg" alt="간장게장" style="width: 100%; height: 100%; object-fit: cover;" />
-              </div>
-              <div class="menu-content">
-                <div class="dish-name-ko">간장게장</div>
-                <h2 class="dish-name">Soy Sauce Marinated Crab (Ganjang Gejang)</h2>
-                <p class="dish-description">
-                  Fresh blue crab marinated and aged in seasoned soy sauce.<br>
-                  Market price (Reservation required 1~2 weeks in advance)
-                </p>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="food-image">
-                <img src="menu_saeu-jang.jpg" alt="새우장" style="width: 100%; height: 100%; object-fit: cover;" />
-              </div>
-              <div class="menu-content">
-                <div class="dish-name-ko">새우장</div>
-                <h2 class="dish-name">Soy Sauce Marinated Shrimp</h2>
-                <p class="dish-description">
-                  The shrimp version of ganjang gejang. Fresh shrimp marinated and aged in soy-based sauce.
-                </p>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="food-image">
-                <img src="menu_jeon-mori.jpg" alt="전모리" style="width: 100%; height: 100%; object-fit: cover;" />
-              </div>
-              <div class="menu-content">
-                <div class="dish-name-ko">전모리</div>
-                <h2 class="dish-name">Assorted Jeon (Korean Pancakes)</h2>
-                <p class="dish-description">
-                  Skewered three-color jeon, shiitake jeon, cod jeon, shrimp jeon, seasonal jeon, etc.<br>
-                  Varieties may change by season. Ingredients dipped in egg and flour, then pan-fried.
-                </p>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="food-image">
-                <img src="menu_gujeolpan.jpg" alt="구절판" style="width: 100%; height: 100%; object-fit: cover;" />
-              </div>
-              <div class="menu-content">
-                <div class="dish-name-ko">구절판</div>
-                <h2 class="dish-name">Gujeolpan (Royal Platter of Nine Delicacies)</h2>
-                <p class="dish-description">
-                  Eight different fillings served in a divided octagonal tray, wrapped in thin wheat pancakes.<br>
-                  A colorful and beautiful royal court dish.
-                </p>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="food-image"></div>
-              <div class="menu-content">
-                <div class="dish-name-ko">닭한마리X신선로</div>
-                <h2 class="dish-name">Whole Chicken x Sinseollo Hot Pot</h2>
-                <p class="dish-description">
-                  Sinseollo hot pot with shredded whole chicken (baeksuk), abalone, and assorted condiments,<br>
-                  served with rich, long-simmered broth. Enjoy this once-in-a-lifetime luxurious hot pot.
+                <span style="color: red; font-weight: bold;">[Reservation]</span> Spicy braised chicken stew: chicken, potatoes, carrots, and vegetables simmered in a spicy sauce. Known as the Korean version of meat and potatoes stew.
                 </p>
               </div>
             </div>
@@ -591,68 +442,114 @@
               <div class="food-image"></div>
               <div class="menu-content">
                 <div class="dish-name-ko">백숙</div>
-                <h2 class="dish-name">Whole Chicken Baeksuk</h2>
+                <h2 class="dish-name">Samgyetang Baeksuk</h2>
                 <p class="dish-description">
-                  Whole chicken simmered for hours with ginseng, chestnuts, jujube, and medicinal herbs.<br>
-                  Can also be prepared as Dongdaemun-style chicken hot pot upon request.
+                <span style="color: red; font-weight: bold;">[Reservation]</span> Korean herbal whole chicken soup: A whole chicken simmered with ginseng, chestnuts, jujube, and medicinal herbs. <br>Can be served cut up in Dongdaemun-style chicken hot pot (for 3–4 people).
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_samgyetang.jpg" alt="삼계탕" loading="lazy" decoding="async" />
+              </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">삼계탕</div>
+                <h2 class="dish-name">Samgyetang (Ginseng Chicken Soup)</h2>
+                <p class="dish-description">
+                <span style="color: red; font-weight: bold;">[Reservation]</span> Whole young chicken stuffed with ginseng, glutinous rice, pine nuts, and more, simmered to perfection. (For 1 person)
+                </p>
+              </div>
+            </div>
+         <p style="text-align:center;"></p>
+        </div>
+        </div>
+  <!-- おすすめ料理【コース】 -->
+        <div class="container">
+          <h2 class="section-header">Recommended Course</h2>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <div class="food-image"></div>
+              <div class="menu-content">
+                <div class="dish-name-ko">코스요리</div>
+                <h2 class="dish-name">Korian Luxury Course</h2>
+                <p class="dish-description">
+                  <span style="color: red; font-weight: bold;">[Reservation]</span> Perfect for when you want to enjoy a little luxury in Korean cuisine!<br>
+                  Includes: Porridge & water kimchi, homemade side dishes, Gujeolpan (nine-sectioned platter), seasonal pancake (can be changed to jeon), japchae, recommended meat dish (choice), specialty dish & assorted kimchi, seasonal hot pot, nutritious mixed rice, dessert & tea.
                 </p>
               </div>
             </div>
           </div>
         </div>
-    <!-- 食事メニュー：Meal Menu セクション -->
-    <section class="menu-section">
-      <div class="container">
-        <h2 class="section-header">Meal Menu</h2>
-        <div class="menu-grid">
-          <div class="menu-item">
-            <div class="food-image"></div>
-            <div class="menu-content">
-              <div class="dish-name-ko">돌솥비빔밥</div>
-              <h2 class="dish-name">Stone Pot Bibimbap</h2>
-              <p class="dish-description">Rice served in a hot stone bowl, topped with colorful seasoned vegetables (namul). Mix before eating. + Side dishes included</p>
+                <!-- 焼肉メニュー -->
+        <div class="container">
+          <h2 class="section-header">Yakiniku (Grilled Meat) Menu</h2>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_yangnyeom-galbi.jpg" alt="양념갈비" loading="lazy" decoding="async" />
+              </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">양념 갈비</div>
+                <h2 class="dish-name">Charcoal-Grilled Marinated Pork Steak Ribs</h2>
+                <p class="dish-description">
+                  ・Aged marinated pork steak ribs, banchan (side dishes), sliced cabbage, pickled daikon<br>
+                  ・Vegetables<br>
+                  ＜Extras＞<br>
+                  ・Miso jjigae, mul naengmyeon (cold noodles)<br>
+                  ・Others: more cabbage slices, pickled daikon, grilled garlic
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="menu-item">
-            <div class="food-image">
-             <img src="menu_haemul-sundubu.jpg" alt="해물순두부찌개" style="width: 100%; height: 100%; object-fit: cover;" />
-             </div>
-            <div class="menu-content">
-              <div class="dish-name-ko">해물순두부찌개</div>
-              <h2 class="dish-name">Seafood Soft Tofu Stew</h2>
-              <p class="dish-description">Spicy and savory stew with seafood and soft unpressed tofu (sundubu). + Served with rice and side dishes</p>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_samgyeopsal.jpg" alt="삼겹살" loading="lazy" decoding="async" />
+              </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">삼겹살</div>
+                <h2 class="dish-name">Samgyeopsal (Grilled Pork Belly)</h2>
+                <p class="dish-description">
+                  ・Sankyodai pork belly, banchan (side dishes), cabbage salad, grilled kimchi, sliced garlic, condiments: salt & pepper and marinated soybean paste<br>
+                  ＜Extras＞<br>
+                  ・Meal menu: miso jjigae fried rice<br>
+                  ・Others: perilla leaves, grilled vegetables, extra kimchi
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="menu-item">
-            <div class="food-image">
-             <img src="menu_doenjang-jjigae.jpg" alt="된장찌개" style="width: 100%; height: 100%; object-fit: cover;" />
-             </div>
-            <div class="menu-content">
-              <div class="dish-name-ko">된장찌개</div>
-              <h2 class="dish-name">Doenjang Jjigae (Soybean Paste Stew)</h2>
-              <p class="dish-description">Nutritious Korean miso stew with clams, vegetables, tofu, and more, simmered together. + Served with rice and side dishes</p>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_jangeo-gui.jpg" alt="장어구이" loading="lazy" decoding="async" />
+              </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">장어구이</div>
+                <h2 class="dish-name">Korean-Style Grilled Eel</h2>
+                <p class="dish-description">
+                  Korean-style grilled eel, rare to find in Japan.<br>
+                  Carefully grilled high-quality eel raised in natural environments, known as "Pungcheon Jangeo".<br>
+                  Enjoy a variety of flavors, from sweet and spicy to fragrant plain grilled.<br>
+                  [Four Flavors of Korean-Style Eel]<br>
+                  Authentic plain grilled without sauce [Shirayaki], spicy gochujang-glazed Korean-style grilled eel [Gochujang flavor], sweet and tart wild raspberry sauce [Bokbunja flavor], and the classic Korean soy sauce glaze [Soy Sauce flavor].
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <p class="menu-note" style="text-align: center;"></p>
-      </div>
       <!-- 음료 -->
         <div class="container">
           <h2 class="section-header">Drink Menu</h2>
           <div class="menu-grid">
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_draft-beer.jpg" alt="생맥주" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_draft-beer.jpg" alt="생맥주" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">생맥주</div>
                 <h2 class="dish-name">Draft Beer</h2>
-                <p class="dish-description">Medium / Small / Bottled Beer 500ml / Non-alcoholic Beer</p>
+                <p class="dish-description">Medium / Small / Bottle Beer 500ml / Non-alcoholic Beer</p>
               </div>
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_highball.jpg" alt="하이볼" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_highball.jpg" alt="하이볼" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">하이볼</div>
@@ -662,60 +559,60 @@
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_sour.jpg" alt="칵테일(사와)" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_sour.jpg" alt="칵테일(사와)" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">칵테일(사와)</div>
-                <h2 class="dish-name">Sour Cocktails</h2>
+                <h2 class="dish-name">Sour</h2>
                 <p class="dish-description">Lemon / Peach</p>
               </div>
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_sake.jpg" alt="사케" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_sake.jpg" alt="사케" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">사케</div>
-                <h2 class="dish-name">Sake (Japanese Rice Wine)</h2>
-                <p class="dish-description">Glass / 1 Go / 2 Go</p>
+                <h2 class="dish-name">Sake</h2>
+                <p class="dish-description">Glass / 1 serving / 2 servings</p>
               </div>
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_barley-soju.jpg" alt="보리소주" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_barley-soju.jpg" alt="보리소주" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">보리소주</div>
                 <h2 class="dish-name">Barley Shochu</h2>
-                <p class="dish-description">Nikaido / Oita Prefecture<br>Glass / Bottle 900ml<br></p>
+                <p class="dish-description">Nikaido (Oita Prefecture)<br>Glass / Bottle 900ml<br></p>
               </div>
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_sweetpotato-soju.jpg" alt="고구마소주" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_sweetpotato-soju.jpg" alt="고구마소주" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">고구마소주</div>
                 <h2 class="dish-name">Sweet Potato Shochu</h2>
-                <p class="dish-description">Kurokirishima / Miyazaki Prefecture<br>Glass / Bottle 720ml, 900ml, 1800ml<br>
-                                            Satsuma Chaya / Kagoshima Prefecture<br>Glass / Bottle 1800ml<br>
-                                            Satsuma Chaya / Kagoshima Prefecture / Aged: Tunnel Storage<br>Glass / Bottle 1800ml<br>
-                                            Mitake / Kagoshima Prefecture / Aged: Tunnel Storage<br>Glass / Bottle 1800ml<br></p>
+                <p class="dish-description">Kurokirishima (Miyazaki Prefecture)<br>Glass / Bottle 720ml, 900ml, 1800ml<br>
+                                            Satsuma Chaya (Kagoshima Prefecture)<br>Glass / Bottle 1800ml<br>
+                                            Satsuma Chaya (Kagoshima Prefecture, tunnel-aged)<br>Glass / Bottle 1800ml<br>
+                                            Mitake (Kagoshima Prefecture, tunnel-aged)<br>Glass / Bottle 1800ml<br></p>
               </div>
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_plum-wine.jpg" alt="매실주" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_plum-wine.jpg" alt="매실주" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">매실주</div>
-                <h2 class="dish-name">Plum Wine (Umeshu)</h2>
+                <h2 class="dish-name">Plum Wine</h2>
                 <p class="dish-description">Commercial (Glass) / Homemade (Glass)</p>
               </div>
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_premium.jpg" alt="프리미엄" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_premium.jpg" alt="프리미엄" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">프리미엄</div>
@@ -725,19 +622,19 @@
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_korean-soju.jpg" alt="한국소주" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_korean-soju.jpg" alt="한국소주" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">한국소주</div>
                 <h2 class="dish-name">Korean Soju</h2>
-                <p class="dish-description">Korean Soju (Chamisul, Joeunday, Chum Churum: 375ml)<br>
+                <p class="dish-description">Korean Soju (Chamisul, Joeun Day, Chum Churum: 375ml)<br>
                                             Baekseju (375ml)<br>
-                                            Bokbunja (Korean Raspberry Wine, 375ml)<br></p>
+                                            Bokbunja (Korean wild raspberry wine, 375ml)<br></p>
               </div>
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_makgeolli.jpg" alt="막걸리" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_makgeolli.jpg" alt="막걸리" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">막걸리</div>
@@ -747,42 +644,121 @@
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_ginseng-wine.jpg" alt="고려인삼주" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_ginseng-wine.jpg" alt="고려인삼주" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">고려인삼주</div>
-                <h2 class="dish-name">Homemade Ginseng Liquor</h2>
+                <h2 class="dish-name">Homemade Liquor (Ginseng Wine)</h2>
                 <p class="dish-description">Glass </p>
               </div>
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_soft-drink.jpg" alt="소프트드링크" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_soft-drink.jpg" alt="소프트드링크" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">소프트드링크</div>
                 <h2 class="dish-name">Soft Drinks</h2>
-                <p class="dish-description">Korean Ginseng Juice / Red Ginseng Tea (Iced/Hot) / Jujube Tea (Iced/Hot) / Oolong Tea / Barley Tea (Iced/Hot)<br>
-                                             Cola / Cider / Ginger Ale / Orange Juice / Coffee</p>
+                <p class="dish-description">Korean ginseng juice / Red ginseng tea (iced/hot) / Citron tea (iced/hot) / Oolong tea / Barley tea (iced/hot)<br>
+                                             Cola / Cider / Ginger ale / Orange juice / Coffee</p>
               </div>
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_korean-drink.jpg" alt="한국 음료" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_korean-drink.jpg" alt="한국 음료" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">한국 음료</div>
-                <h2 class="dish-name">Korean Soft Drinks</h2>
-                <p class="dish-description">Grated Pear Juice<br>Peach Juice with Pulp<br>Seset Orange Juice</p>
+                <h2 class="dish-name">Korean Drinks</h2>
+                <p class="dish-description">Grated pear juice<br>Peach juice with pulp<br>Sac Sac orange juice</p>
               </div>
             </div>
           </div>
         </div>
-    </section>
-
+               <!-- 예약메뉴 -->
+        <div class="container">
+          <h2 class="section-header">Reservation Menu</h2>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_ganjang-gejang.jpg" alt="간장게장" loading="lazy" decoding="async" />
+              </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">간장게장</div>
+                <h2 class="dish-name">Ganjang Gejang (Soy Sauce Marinated Crab)</h2>
+                <p class="dish-description">
+                  Fresh live blue crab marinated and aged in seasoned soy sauce.<br>
+                  <span style="color: red; font-weight: bold;">Market Price (Reserve 1–2 weeks in advance)</span>
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_saeu-jang.jpg" alt="새우장" loading="lazy" decoding="async" />
+              </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">새우장</div>
+                <h2 class="dish-name">Saeu Jang (Soy Sauce Marinated Shrimp)</h2>
+                <p class="dish-description">
+                  Ganjang Gejang with shrimp: Fresh shrimp marinated and aged in seasoned soy sauce.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_jeon-mori.jpg" alt="전모리" loading="lazy" decoding="async" />
+              </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">전모리</div>
+                <h2 class="dish-name">Assorted Jeon (Korean Pancakes)</h2>
+                <p class="dish-description">
+                  Three-color skewer jeon, shiitake mushroom jeon, cod jeon, shrimp jeon, seasonal jeon, etc.<br>
+                  The contents may change depending on the season. Ingredients are coated with flour and egg, then pan-fried.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_gujeolpan.jpg" alt="구절판" loading="lazy" decoding="async" />
+              </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">구절판</div>
+                <h2 class="dish-name">Gujeolpan (Nine-sectioned Platter)</h2>
+                <p class="dish-description">
+                  Eight types of colorful ingredients served in a sectioned tray, eaten wrapped in thin wheat pancakes. <br>
+                  A beautiful royal court dish.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image"></div>
+              <div class="menu-content">
+                <div class="dish-name-ko">닭한마리X신선로</div>
+                <h2 class="dish-name">Dakhanmari ✖ Sinseollo</h2>
+                <p class="dish-description">
+                  Shredded Dakhanmari (whole chicken) and abalone arranged in a Sinseollo hot pot, served with special condiments.<br>
+                  Enjoy this luxurious "once-in-a-lifetime hot pot" with rich, long-simmered broth.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_baeksuk.jpg" alt="백숙" loading="lazy" decoding="async" />
+              </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">백숙</div>
+                <h2 class="dish-name">Samgyetang Baeksuk</h2>
+                <p class="dish-description">
+                  A whole chicken simmered for hours with ginseng, chestnuts, jujube, and medicinal herbs—"a pot that makes you forget time." <br>
+                  The chicken can also be cut up and served Dongdaemun-style as chicken hot pot.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
     <footer>
         <div class="container">
-            <p class="footer-text">Thank you for visiting KORIAN. We hope you enjoy your meal!</p>
+            <p class="footer-text"></p>
         </div>
     </footer>
 </body>

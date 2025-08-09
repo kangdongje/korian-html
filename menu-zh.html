@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>korian</title>
     <style>
         .section-header {
@@ -23,7 +23,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 2px;
-            background: linear-gradient(90deg, transparent, #D4A574, transparent);
+            background: linear-gradient(90deg,transparent,#D4A574,transparent);
         }
         * {
             margin: 0;
@@ -32,8 +32,8 @@
         }
 
         body {
-            font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
-            background: linear-gradient(135deg, #2C1810 0%, #3E2723 50%, #4A2C20 100%);
+            font-family: 'Segoe UI','Malgun Gothic',sans-serif;
+            background: linear-gradient(135deg,#2C1810 0%,#3E2723 50%,#4A2C20 100%);
             color: #F5E6D3;
             line-height: 1.6;
             overflow-x: hidden;
@@ -50,7 +50,7 @@
             padding: 80px 0 100px;
             text-align: center;
             position: relative;
-            background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);
+            background: radial-gradient(circle at center,rgba(255,255,255,0.05) 0%,transparent 70%);
         }
 
         .header-ornament {
@@ -60,7 +60,7 @@
             transform: translateX(-50%);
             width: 100px;
             height: 4px;
-            background: linear-gradient(90deg, transparent 0%, #D4A574 50%, transparent 100%);
+            background: linear-gradient(90deg,transparent 0%,#D4A574 50%,transparent 100%);
             border-radius: 2px;
         }
 
@@ -68,11 +68,11 @@
             font-size: 4rem;
             font-weight: 300;
             margin-bottom: 20px;
-            background: linear-gradient(45deg, #D4A574, #F4E4BC);
+            background: linear-gradient(45deg,#D4A574,#F4E4BC);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 2px 20px rgba(212, 165, 116, 0.3);
+            text-shadow: 0 2px 20px rgba(212,165,116,0.3);
             letter-spacing: 0.1em;
         }
 
@@ -87,26 +87,26 @@
         /* Menu Grid */
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
             gap: 40px;
             padding: 60px 0;
         }
 
         .menu-item {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255,255,255,0.08);
             border-radius: 20px;
             overflow: hidden;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 165, 116, 0.2);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(212,165,116,0.2);
+            transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
             position: relative;
             group: hover;
         }
 
         .menu-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 30px rgba(212, 165, 116, 0.2);
-            border-color: rgba(212, 165, 116, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3),0 0 30px rgba(212,165,116,0.2);
+            border-color: rgba(212,165,116,0.4);
         }
 
         .menu-item::before {
@@ -116,7 +116,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, #D4A574, #F4E4BC, #D4A574);
+            background: linear-gradient(90deg,#D4A574,#F4E4BC,#D4A574);
             transform: scaleX(0);
             transition: transform 0.4s ease;
         }
@@ -128,7 +128,7 @@
         .food-image {
             width: 100%;
             height: 250px;
-            background: linear-gradient(45deg, #8B4513, #A0522D, #CD853F);
+            background: linear-gradient(45deg,#8B4513,#A0522D,#CD853F);
             position: relative;
             overflow: hidden;
         }
@@ -137,8 +137,8 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 70%, rgba(212, 165, 116, 0.3) 0%, transparent 50%);
+            background: radial-gradient(circle at 30% 30%,rgba(255,255,255,0.2) 0%,transparent 50%),
+                        radial-gradient(circle at 70% 70%,rgba(212,165,116,0.3) 0%,transparent 50%);
         }
 
         .food-image::after {
@@ -146,7 +146,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%,-50%);
             font-size: 3rem;
             opacity: 0.6;
             filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3));
@@ -154,6 +154,13 @@
 
         .food-image:has(img)::after {
             display: none;
+        }
+
+        .food-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .menu-content {
@@ -198,7 +205,7 @@
             left: 10%;
             width: 60px;
             height: 60px;
-            background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle,rgba(212,165,116,0.1) 0%,transparent 70%);
             border-radius: 50%;
             animation: float 6s ease-in-out infinite;
         }
@@ -208,7 +215,7 @@
             right: 15%;
             width: 40px;
             height: 40px;
-            background: radial-gradient(circle, rgba(244, 228, 188, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle,rgba(244,228,188,0.1) 0%,transparent 70%);
             border-radius: 50%;
             animation: float 8s ease-in-out infinite reverse;
         }
@@ -218,13 +225,13 @@
             left: 20%;
             width: 80px;
             height: 80px;
-            background: radial-gradient(circle, rgba(212, 165, 116, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle,rgba(212,165,116,0.08) 0%,transparent 70%);
             border-radius: 50%;
             animation: float 10s ease-in-out infinite;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            0%,100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(180deg); }
         }
 
@@ -232,7 +239,7 @@
         footer {
             text-align: center;
             padding: 60px 0 40px;
-            border-top: 1px solid rgba(212, 165, 116, 0.2);
+            border-top: 1px solid rgba(212,165,116,0.2);
             margin-top: 80px;
         }
 
@@ -291,8 +298,17 @@
     <header>
         <div class="container">
             <div class="header-ornament"></div>
-            <h1><img src="logo.png" alt="KORIAN ロゴ" class="logo-image" /></h1>
+            <h1><img src="logo.png" alt="KORIAN 标志" class="logo-image" /></h1>
             <p class="subtitle"></p>
+            <p class="subtitle">预约请<br><strong style="font-size: 1.2em;">📞 电话</strong>或<br><strong style="font-size: 1.2em;">📩Instagram私信</strong><br>联系我们 </p>
+            <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px;">
+              <a href="tel:0662116225" style="display: inline-block; padding: 12px 24px; background-color: #F4E4BC; color: #2C1810; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: background-color 0.3s;">
+                📞 电话
+              </a>
+              <a href="https://www.instagram.com/korian_artisan" target="_blank" style="display: inline-block; padding: 12px 24px; background-color: #F4E4BC; color: #2C1810; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: background-color 0.3s;">
+                📩 Instagram私信
+              </a>
+            </div>
         </div>
     </header>
     <main>
@@ -300,191 +316,165 @@
         <div class="container">
          <h2 class="section-header">推荐料理</h2>
          <div class="menu-grid">
+          <div class="menu-item">
+             <div class="food-image">
+              <img src="menu_bossam.jpg" alt="한방보쌈" loading="lazy" decoding="async" />
+            </div>
+            <div class="menu-content">
+              <div class="dish-name-ko">한방보쌈</div>
+              <h2 class="dish-name">韩方包肉</h2>
+              <p class="dish-description"><span style="color: red; font-weight: bold;">※人气No.1</span><br>
+                菜包肉、菜包肉：使用韩方食材煮制的猪肉，2~3人可共享  </p>
+            </div>
+          </div>
+          <div class="menu-item">
+             <div class="food-image">
+              <img src="menu_japchae.jpg" alt="잡채" loading="lazy" decoding="async" />
+            </div>
+          <div class="menu-content">
+            <div class="dish-name-ko">잡채</div>
+             <h2 class="dish-name">杂菜粉丝</h2>
+            <p class="dish-description">什锦炒粉丝、什锦拌粉丝<BR> 韩国粉丝、人参、牛肉丝等用酱油调味炒拌的料理</p>
+            </div>
+          </div>
            <div class="menu-item">
              <div class="food-image">
-              <img src="menu_japchae.jpg" alt="잡채" style="width: 100%; height: 100%; object-fit: cover;" />
+              <img src="menu_haemul-pajeon.jpg" alt="해물파전" loading="lazy" decoding="async" />
              </div>
-             <div class="menu-content">
-               <div class="dish-name-ko">잡채</div>
-               <h2 class="dish-name">杂菜粉丝(チャプチェ)</h2>
-               <p class="dish-description">用韩国粉丝、胡萝卜、牛肉丝等用酱油调味炒制拌成的料理。</p>
-             </div>
-           </div>
-           <div class="menu-item">
-             <div class="food-image"></div>
              <div class="menu-content">
                <div class="dish-name-ko">해물파전</div>
                <h2 class="dish-name">海鲜煎饼</h2>
-               <p class="dish-description">海鲜和葱的韩式煎饼。</p>
+               <p class="dish-description">海鲜和葱煎饼、海鲜葱煎饼、海鲜葱煎饼</p>
              </div>
            </div>
            <div class="menu-item">
              <div class="food-image">
-               <img src="menu_gamja-jeon.jpg" alt="감자전" style="width: 100%; height: 100%; object-fit: cover;" />
+               <img src="menu_gamja-jeon.jpg" alt="감자전" loading="lazy" decoding="async" />
              </div>
              <div class="menu-content">
                <div class="dish-name-ko">감자전</div>
                <h2 class="dish-name">土豆煎饼</h2>
-               <p class="dish-description">薄脆可口的土豆煎饼。</p>
-               <div class="dish-name-ko" style="margin-top:10px;">韭菜煎饼(부추전)</div>
+               <p class="dish-description">薄脆的土豆煎饼 </p>
+               <div class="dish-name-ko" style="margin-top:10px;">ニラチヂミ(부추전):韭菜煎饼、韭菜煎饼</div>
              </div>
            </div>
            <div class="menu-item">
             <div class="food-image">
-             <img src="menu_ojingeohoe-muchim.jpg" alt="오징어무침" style="width: 100%; height: 100%; object-fit: cover;" />
+             <img src="menu_ojingeohoe-muchim.jpg" alt="오징어무침" loading="lazy" decoding="async" />
             </div>
              <div class="menu-content">
-               <div class="dish-name-ko">오징어무침</div>
-               <h2 class="dish-name">辣拌鱿鱼(オジンオムチム)</h2>
-               <p class="dish-description">甜辣酸味的鱿鱼拌菜。</p>
-             </div>
-           </div>
-           <div class="menu-item">
-             <div class="food-image"></div>
-             <div class="menu-content">
-               <div class="dish-name-ko">오징어볶음</div>
-               <h2 class="dish-name">辣炒鱿鱼(オジンオポックム)</h2>
-               <p class="dish-description">鱿鱼和蔬菜加辣椒酱等调味后微辣炒制的菜肴。</p>
+               <div class="dish-name-ko">오징어회무침</div>
+               <h2 class="dish-name">鱿鱼拌菜</h2>
+               <p class="dish-description">鱿鱼拌菜<BR> 凉拌鱿鱼、凉拌鱿鱼 甜辣酸口味</p>
              </div>
            </div>
            <div class="menu-item">
              <div class="food-image">
-               <img src="menu_jeyuk-bokkeum.jpg" alt="제육볶음" style="width: 100%; height: 100%; object-fit: cover;" />
+               <img src="menu_jeyuk-bokkeum.jpg" alt="제육볶음" loading="lazy" decoding="async" />
              </div>
              <div class="menu-content">
                <div class="dish-name-ko">제육볶음</div>
-               <h2 class="dish-name">辣炒猪肉(ジェユックポックム)</h2>
-               <p class="dish-description">五花肉与蔬菜一起甜辣炒制，令人食欲大开的家常菜。※人气No.3</p>
+               <h2 class="dish-name">辣炒猪肉</h2>
+               <p class="dish-description"><span style="color: red; font-weight: bold;">※人气No.3</span><br>
+                五花肉蔬菜炒、辣炒猪肉：五花肉与蔬菜一起炒，甜辣开胃的家常菜 </p>
              </div>
            </div>
            <div class="menu-item">
              <div class="food-image">
-               <img src="menu_bossam.jpg" alt="漢方ボッサム" style="width: 100%; height: 100%; object-fit: cover;" />
-             </div>
-             <div class="menu-content">
-               <div class="dish-name-ko">한방보쌈</div>
-               <h2 class="dish-name">韩方保肝肉(漢方ボッサム)</h2>
-               <p class="dish-description">用韩方药材煮制的猪肉，与泡菜一起包着吃的菜肴。※人气No.1</p>
-             </div>
-           </div>
-           <div class="menu-item">
-             <div class="food-image">
-               <img src="menu_gyeran-jjim.jpg" alt="계란찜" style="width: 100%; height: 100%; object-fit: cover;" />
-             </div>
-             <div class="menu-content">
-               <div class="dish-name-ko">뚝배기계란찜</div>
-               <h2 class="dish-name">鸡蛋羹(ケランチム)</h2>
-               <p class="dish-description">将鸡蛋与高汤搅拌，加入葱和胡萝卜等，用砂锅蒸制的鸡蛋料理。</p>
-             </div>
-           </div>
-           <div class="menu-item">
-             <div class="food-image">
-               <img src="menu_nakji-bokkeum.jpg" alt="낙지볶음" style="width: 100%; height: 100%; object-fit: cover;" />
+               <img src="menu_nakji-bokkeum.jpg" alt="낙지볶음" loading="lazy" decoding="async" />
              </div>
              <div class="menu-content">
                <div class="dish-name-ko">낙지볶음</div>
-               <h2 class="dish-name">辣炒章鱼(ナッチポックム)</h2>
-               <p class="dish-description">辣炒章鱼。※人气No.2</p>
+               <h2 class="dish-name">辣炒章鱼</h2>
+               <p class="dish-description"><span style="color: red; font-weight: bold;">※人气No.2</span><br>
+                小章鱼炒、辣炒章鱼  是下饭或下酒的绝佳选择 </p>
              </div>
            </div>
-           <div class="menu-item">
-             <div class="food-image">
-              <img src="menu_kimchi-set.jpg" alt="김치모리" style="width: 100%; height: 100%; object-fit: cover;" />
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_gamjatang.jpg" alt="감자탕" loading="lazy" decoding="async" />
               </div>
-             <div class="menu-content">
-               <div class="dish-name-ko">김치세트</div>
-               <h2 class="dish-name">三种泡菜拼盘</h2>
-               <p class="dish-description">白菜、萝卜、黄瓜泡菜拼盘。(单品700日元)</p>
-             </div>
-           </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">감자탕</div>
+                <h2 class="dish-name">土豆脊骨汤</h2>
+                <p class="dish-description">
+                <span style="color: red; font-weight: bold;">【预约】</span> 猪骨炖煮、脊骨土豆汤 用带骨猪背肉或颈肉加入土豆、蔬菜等炖煮的微辣火锅 
+                </p>
+              </div>
+            </div>
            <div class="menu-item">
-             <div class="food-image">
-               <img src="menu_namul-set.jpg" alt="나물세트" style="width: 100%; height: 100%; object-fit: cover;" />
-             </div>
-             <div class="menu-content">
-               <div class="dish-name-ko">나물세트</div>
-               <h2 class="dish-name">三种拌菜拼盘</h2>
-               <p class="dish-description">用盐水煮熟后，拌入芝麻、调味料和香油的家常菜。(单品700日元)</p>
-             </div>
-           </div>
-           <div class="menu-item">
-             <div class="food-image"></div>
-             <div class="menu-content">
-               <div class="dish-name-ko">불고기</div>
-               <h2 class="dish-name">韩式烤牛肉(プルコギ)</h2>
-               <p class="dish-description">牛肉片与蔬菜一起用甜辣酱腌制后炒煮而成的韩国经典料理。</p>
-             </div>
-           </div>
+              <div class="food-image">
+                <img src="menu_bulnak-jeongol.jpg" alt="불낙전골" loading="lazy" decoding="async" />
+              </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">불낙전골</div>
+                <h2 class="dish-name">牛肉章鱼火锅</h2>
+                <p class="dish-description">
+                  牛肉和章鱼火锅 烤牛肉章鱼火锅 甜嫩的牛肉和辣味十足的章鱼，完美融合的美味
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_haemul-tang.jpg" alt="해물탕" loading="lazy" decoding="async" />
+              </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">해물탕</div>
+                <h2 class="dish-name">特色海鲜火锅</h2>
+                <p class="dish-description">
+                <span style="color: red; font-weight: bold;">【预约】</span> 海鲜汤（海鲜火锅、海鲜汤）：多种海鲜与香菜、葱、萝卜等蔬菜，搭配辣椒酱为底料
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_dakbokkeum-tang.jpg" alt="닭볶음탕" loading="lazy" decoding="async" />
+              </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">닭볶음탕</div>
+                <h2 class="dish-name">辣炖鸡块</h2>
+                <p class="dish-description">
+                <span style="color: red; font-weight: bold;">【预约】</span> 鸡肉炖煮、辣炖鸡块 鸡肉、土豆、胡萝卜等与辣酱一起炖煮，韩式家常锅物
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image"></div>
+              <div class="menu-content">
+                <div class="dish-name-ko">백숙</div>
+                <h2 class="dish-name">韩方白切鸡</h2>
+                <p class="dish-description">
+                <span style="color: red; font-weight: bold;">【预约】</span> 韩方清炖鸡、药膳清炖鸡 <br>整鸡加入高丽参、栗子、红枣等药材慢炖的“忘却时间的火锅” <br>整鸡切块也可做成东大门鸡锅（3~4人）
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_samgyetang.jpg" alt="삼계탕" loading="lazy" decoding="async" />
+              </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">삼계탕</div>
+                <h2 class="dish-name">参鸡汤</h2>
+                <p class="dish-description">
+                <span style="color: red; font-weight: bold;">【预约】</span> 参鸡汤，整鸡内塞入高丽参、糯米、松子等炖煮的料理（1人份）
+                </p>
+              </div>
+            </div>
          <p style="text-align:center;"></p>
         </div>
         </div>
-  <!-- おすすめ料理【鍋・チゲ】 -->
+  <!-- おすすめ料理【コース】 -->
         <div class="container">
-          <h2 class="section-header">推荐料理<br>【火锅・汤锅】</h2>
+          <h2 class="section-header">推荐套餐</h2>
           <div class="menu-grid">
             <div class="menu-item">
               <div class="food-image"></div>
               <div class="menu-content">
-                <div class="dish-name-ko">부대찌개</div>
-                <h2 class="dish-name">部队锅(プデチゲ)</h2>
+                <div class="dish-name-ko">코스요리</div>
+                <h2 class="dish-name">Korian 奢华套餐</h2>
                 <p class="dish-description">
-                  香肠、午餐肉、蔬菜、年糕、豆腐等多种食材放入锅中炖煮的韩国大众火锅料理。
-                </p>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="food-image"></div>
-              <div class="menu-content">
-                <div class="dish-name-ko">불낙전골</div>
-                <h2 class="dish-name">牛肉章鱼火锅(プルナッチョンゴル)</h2>
-                <p class="dish-description">
-                  甜嫩的牛肉与辣味有嚼劲的章鱼交织出绝妙的美味。
-                </p>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="food-image">
-                <img src="menu_gamjatang.jpg" alt="감자탕" style="width: 100%; height: 100%; object-fit: cover;" />
-              </div>
-              <div class="menu-content">
-                <div class="dish-name-ko">감자탕</div>
-                <h2 class="dish-name">土豆排骨汤(カムジャタン)</h2>
-                <p class="dish-description">
-                  带骨猪背肉或颈肉与土豆、绿叶蔬菜等在微辣汤底中炖煮的火锅。
-                </p>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="food-image">
-                <img src="menu_haemul-tang.jpg" alt="해물탕" style="width: 100%; height: 100%; object-fit: cover;" />
-              </div>
-              <div class="menu-content">
-                <div class="dish-name-ko">해물탕</div>
-                <h2 class="dish-name">海鲜火锅</h2>
-                <p class="dish-description">
-                  各种海鲜与芹菜、葱、萝卜等蔬菜一起，用辣椒酱为基底的汤炖煮而成的火锅。
-                </p>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="food-image"></div>
-              <div class="menu-content">
-                <div class="dish-name-ko">닭볶음탕</div>
-                <h2 class="dish-name">辣炖鸡块(タットリタン)</h2>
-                <p class="dish-description">
-                  鸡肉、土豆、胡萝卜等放入锅中，用辣椒调味的酱料微辣炖煮的韩国人气火锅。
-                </p>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="food-image">
-                <img src="menu_samgyetang.jpg" alt="삼계탕" style="width: 100%; height: 100%; object-fit: cover;" />
-              </div>
-              <div class="menu-content">
-                <div class="dish-name-ko">삼계탕</div>
-                <h2 class="dish-name">参鸡汤(サムゲタン)</h2>
-                <p class="dish-description">
-                  在整鸡内塞入高丽参、糯米、松子等炖煮的滋补料理。
+                  <span style="color: red; font-weight: bold;">【预约】</span> 想要享受奢华韩餐时的首选！<br>
+                  粥·水泡菜、手工小菜、九节板、时令煎饼（可换为全）、杂菜粉丝、推荐肉类（任选）、特色菜·泡菜拼盘、时令火锅、营养拌饭、甜点&茶
                 </p>
               </div>
             </div>
@@ -496,153 +486,60 @@
           <div class="menu-grid">
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_yangnyeom-galbi.jpg" alt="양념갈비" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_yangnyeom-galbi.jpg" alt="양념갈비" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">양념 갈비</div>
-                <h2 class="dish-name">炭烤腌制猪排骨</h2>
+                <h2 class="dish-name">炭火腌制猪排</h2>
                 <p class="dish-description">
-                  熟成腌制猪排骨、韩式小菜、卷心菜丝、腌萝卜片、蔬菜和调味酱一同上桌。可加点味噌汤、冷面、卷心菜丝等。
+                  ・熟成腌制猪排、韩式小菜、卷心菜丝、千层腌萝卜片<br>
+                  ・蔬菜<br>
+                  ＜追加＞<br>
+                  ・味增汤、冷面<br>
+                  ・其他：卷心菜丝、千层腌萝卜、烤蒜片
                 </p>
               </div>
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_samgyeopsal.jpg" alt="삼겹살" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_samgyeopsal.jpg" alt="삼겹살" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">삼겹살</div>
-                <h2 class="dish-name">五花肉(サムギョプサル)</h2>
+                <h2 class="dish-name">五花肉</h2>
                 <p class="dish-description">
-                  三元猪五花肉、韩式小菜、卷心菜沙拉、烤泡菜、大蒜片和蔬菜、蘸料套餐。可加点味噌汤、炒饭、紫苏叶、烤泡菜等。
-                </p>
-              </div>
-            </div>
-          </div>
-          <p style="text-align: center;">※2人前から承ります</p>
-        </div>
-        <!-- 예약메뉴 -->
-        <div class="container">
-          <h2 class="section-header">预约菜单</h2>
-          <div class="menu-grid">
-            <div class="menu-item">
-              <div class="food-image">
-                <img src="menu_ganjang-gejang.jpg" alt="간장게장" style="width: 100%; height: 100%; object-fit: cover;" />
-              </div>
-              <div class="menu-content">
-                <div class="dish-name-ko">간장게장</div>
-                <h2 class="dish-name">酱蟹(カンジャンケジャン)</h2>
-                <p class="dish-description">
-                  新鲜活螃蟹腌制于调味酱油中发酵的料理。<br>
-                  时价(需提前1~2周预约)
+                  ・三元猪五花肉、韩式小菜、卷心菜沙拉、烤泡菜、大蒜片、调料组合：盐胡椒&腌制味噌<br>
+                  ＜追加＞<br>
+                  ・主食菜单：味增汤炒饭<br>
+                  ・其他：紫苏叶、烤菜、追加泡菜蔬菜
                 </p>
               </div>
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_saeu-jang.jpg" alt="새우장" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_jangeo-gui.jpg" alt="장어구이" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
-                <div class="dish-name-ko">새우장</div>
-                <h2 class="dish-name">酱虾(海老ジャン)</h2>
+                <div class="dish-name-ko">장어구이</div>
+                <h2 class="dish-name">韩式烤鳗鱼</h2>
                 <p class="dish-description">
-                  酱蟹的虾版。新鲜虾腌制于酱油调味汁中发酵的料理。
-                </p>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="food-image">
-                <img src="menu_jeon-mori.jpg" alt="전모리" style="width: 100%; height: 100%; object-fit: cover;" />
-              </div>
-              <div class="menu-content">
-                <div class="dish-name-ko">전모리</div>
-                <h2 class="dish-name">煎饼拼盘(ジョン盛り合わせ)</h2>
-                <p class="dish-description">
-                  三色串煎饼、香菇煎饼、鳕鱼煎饼、虾煎饼、时令煎饼等。<br>
-                  内容根据季节变化。将食材蘸蛋液与面粉后煎制的料理。
-                </p>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="food-image">
-                <img src="menu_gujeolpan.jpg" alt="구절판" style="width: 100%; height: 100%; object-fit: cover;" />
-              </div>
-              <div class="menu-content">
-                <div class="dish-name-ko">구절판</div>
-                <h2 class="dish-name">九节板(九節板)</h2>
-                <p class="dish-description">
-                  八角盘中放入八种配菜，用面糊摊成薄饼包裹配菜食用的料理。<br>
-                  色彩丰富的宫廷料理。
-                </p>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="food-image"></div>
-              <div class="menu-content">
-                <div class="dish-name-ko">닭한마리X신선로</div>
-                <h2 class="dish-name">整鸡火锅✖神仙炉</h2>
-                <p class="dish-description">
-                  在神仙炉锅中放入拆好的整鸡（白熟），搭配鲍鱼和调味料等，<br>
-                  倒入熬煮许久的高汤享用，体验“一生一次的火锅”的奢华时光。
-                </p>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="food-image"></div>
-              <div class="menu-content">
-                <div class="dish-name-ko">백숙</div>
-                <h2 class="dish-name">整鸡煮(タッカンマリペッスク)</h2>
-                <p class="dish-description">
-                  一整只鸡与高丽参、栗子、红枣等韩方材料长时间炖煮的“忘却时间的火锅”。<br>
-                  也可将整鸡切块做成东大门市场的整鸡火锅。
+                  在日本难得一见的韩式烤鳗鱼<br>
+                  使用被称为“풍천장어（风川鳗鱼）”的优质自然鳗鱼精心烤制 <br>
+                  从甜辣口味到清香白烧，随心选择美味 <br>
+                  [幸福选择，韩式烤鳗鱼四种口味]<br>
+                  不加酱料，仅凭食材原味烤制的正宗【白烧】、香辣辣椒酱风味的韩式蒲烧【辣椒酱味】、韩国产野生覆盆子“복분자（覆盆子）”的酸甜绝配【覆盆子味】、韩式酱烤经典，浓郁香气【酱油味】
                 </p>
               </div>
             </div>
           </div>
         </div>
-    <!-- 食事メニュー：Meal Menu セクション -->
-    <section class="menu-section">
-      <div class="container">
-        <h2 class="section-header">主食菜单：Meal Menu</h2>
-        <div class="menu-grid">
-          <div class="menu-item">
-            <div class="food-image"></div>
-            <div class="menu-content">
-              <div class="dish-name-ko">돌솥비빔밥</div>
-              <h2 class="dish-name">石锅拌饭</h2>
-              <p class="dish-description">将米饭放入器皿，上面色彩丰富地摆上拌菜，拌匀食用的韩国代表料理。+附小菜</p>
-            </div>
-          </div>
-          <div class="menu-item">
-            <div class="food-image">
-              <img src="menu_haemul-sundubu.jpg" alt="해물순두부찌개" style="width: 100%; height: 100%; object-fit: cover;" />
-              </div>
-            <div class="menu-content">
-              <div class="dish-name-ko">해물순두부찌개</div>
-              <h2 class="dish-name">海鲜嫩豆腐汤</h2>
-              <p class="dish-description">可享受海鲜鲜味和未压制的嫩豆腐“纯豆腐”口感的辣味汤料理。+附米饭和小菜</p>
-            </div>
-          </div>
-          <div class="menu-item">
-            <div class="food-image">
-             <img src="menu_doenjang-jjigae.jpg" alt="된장찌개" style="width: 100%; height: 100%; object-fit: cover;" />
-             </div>
-            <div class="menu-content">
-              <div class="dish-name-ko">된장찌개</div>
-              <h2 class="dish-name">大酱汤(テンジャンチゲ)</h2>
-              <p class="dish-description">加入蛤蜊、蔬菜、豆腐等食材炖煮，营养丰富的韩式味噌大酱锅料理。+附米饭和小菜</p>
-            </div>
-          </div>
-        </div>
-        <p class="menu-note" style="text-align: center;"></p>
-      </div>
       <!-- 음료 -->
         <div class="container">
           <h2 class="section-header">饮品菜单</h2>
           <div class="menu-grid">
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_draft-beer.jpg" alt="생맥주" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_draft-beer.jpg" alt="생맥주" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">생맥주</div>
@@ -652,17 +549,17 @@
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_highball.jpg" alt="하이볼" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_highball.jpg" alt="하이볼" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">하이볼</div>
-                <h2 class="dish-name">高球酒</h2>
+                <h2 class="dish-name">高球</h2>
                 <p class="dish-description"></p>
               </div>
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_sour.jpg" alt="칵테일(사와)" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_sour.jpg" alt="칵테일(사와)" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">칵테일(사와)</div>
@@ -672,7 +569,7 @@
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_sake.jpg" alt="사케" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_sake.jpg" alt="사케" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">사케</div>
@@ -682,7 +579,7 @@
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_barley-soju.jpg" alt="보리소주" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_barley-soju.jpg" alt="보리소주" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">보리소주</div>
@@ -692,52 +589,52 @@
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_sweetpotato-soju.jpg" alt="고구마소주" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_sweetpotato-soju.jpg" alt="고구마소주" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">고구마소주</div>
                 <h2 class="dish-name">红薯烧酒</h2>
-                <p class="dish-description">黑雾岛/宫崎县<br>杯 / 瓶装 720ml, 900ml, 1800ml<br>
+                <p class="dish-description">黑雾岛/宫崎县<br>杯 / 瓶装 720ml、900ml、1800ml<br>
                                             萨摩茶屋/鹿儿岛县<br>杯 / 瓶装 1800ml<br>
                                             萨摩茶屋/鹿儿岛县/熟成：隧道陈酿<br>杯 / 瓶装 1800ml<br>
-                                            三岳/鹿儿岛县/熟成：隧道陈酿<br>杯 / 瓶装 1800ml<br></p>
+                                            三岳/鹿儿岛县/熟成：隧道陈酿<br>杯 /瓶装 1800ml<br></p>
               </div>
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_plum-wine.jpg" alt="매실주" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_plum-wine.jpg" alt="매실주" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">매실주</div>
-                <h2 class="dish-name">梅子酒</h2>
-                <p class="dish-description">现成品（杯）/ 自制（杯）</p>
+                <h2 class="dish-name">梅酒</h2>
+                <p class="dish-description">成品（杯）/ 自制（杯）</p>
               </div>
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_premium.jpg" alt="프리미엄" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_premium.jpg" alt="프리미엄" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">프리미엄</div>
-                <h2 class="dish-name">高级酒水</h2>
+                <h2 class="dish-name">高级饮品</h2>
                 <p class="dish-description">森伊藏 / 村尾 / 魔王 等</p>
               </div>
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_korean-soju.jpg" alt="한국소주" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_korean-soju.jpg" alt="한국소주" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">한국소주</div>
                 <h2 class="dish-name">韩国烧酒</h2>
-                <p class="dish-description">韩国烧酒（真露・好天日・初饮初乐：375ml）<br>
-                                            百岁酒(375ml)<br>
-                                            覆盆子酒(375ml)<br></p>
+                <p class="dish-description">韩国烧酒（真露、初饮初乐：375ml）<br>
+                                            百岁酒（375ml）<br>
+                                            覆盆子酒（375ml）<br></p>
               </div>
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_makgeolli.jpg" alt="막걸리" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_makgeolli.jpg" alt="막걸리" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">막걸리</div>
@@ -747,39 +644,118 @@
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_ginseng-wine.jpg" alt="고려인삼주" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_ginseng-wine.jpg" alt="고려인삼주" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">고려인삼주</div>
-                <h2 class="dish-name">自制酒(高丽参酒)</h2>
+                <h2 class="dish-name">自制酒（高丽参酒）</h2>
                 <p class="dish-description">杯 </p>
               </div>
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_soft-drink.jpg" alt="소프트드링크" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_soft-drink.jpg" alt="소프트드링크" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">소프트드링크</div>
-                <h2 class="dish-name">软饮料</h2>
+                <h2 class="dish-name">软饮</h2>
                 <p class="dish-description">高丽参果汁 / 红参茶（冰/热） / 枣茶（冰/热） / 乌龙茶 / 麦茶（冰/热）<br>
                                              可乐 / 汽水 / 姜汁汽水 / 橙汁 / 咖啡</p>
               </div>
             </div>
             <div class="menu-item">
               <div class="food-image">
-                <img src="menu_korean-drink.jpg" alt="한국 음료" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img src="menu_korean-drink.jpg" alt="한국 음료" loading="lazy" decoding="async" />
               </div>
               <div class="menu-content">
                 <div class="dish-name-ko">한국 음료</div>
-                <h2 class="dish-name">韩国饮料</h2>
+                <h2 class="dish-name">韩国饮品</h2>
                 <p class="dish-description">磨碎梨汁<br>果粒桃汁<br>塞塞橙汁</p>
               </div>
             </div>
           </div>
         </div>
-    </section>
-
+               <!-- 예약메뉴 -->
+        <div class="container">
+          <h2 class="section-header">预约菜单</h2>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_ganjang-gejang.jpg" alt="간장게장" loading="lazy" decoding="async" />
+              </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">간장게장</div>
+                <h2 class="dish-name">酱蟹</h2>
+                <p class="dish-description">
+                  新鲜活梭子蟹腌制于调味酱油中发酵的料理 <br>
+                  <span style="color: red; font-weight: bold;">时价（需提前1~2周预约）</span>
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_saeu-jang.jpg" alt="새우장" loading="lazy" decoding="async" />
+              </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">새우장</div>
+                <h2 class="dish-name">酱虾</h2>
+                <p class="dish-description">
+                  酱蟹的虾版，新鲜虾腌制于酱油中发酵的料理
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_jeon-mori.jpg" alt="전모리" loading="lazy" decoding="async" />
+              </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">전모리</div>
+                <h2 class="dish-name">煎饼拼盘</h2>
+                <p class="dish-description">
+                  三色串煎饼·香菇煎饼·鳕鱼煎饼·虾煎饼·时令煎饼等 <br>
+                  内容随季节变动，将食材裹粉蘸蛋液煎制的料理
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_gujeolpan.jpg" alt="구절판" loading="lazy" decoding="async" />
+              </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">구절판</div>
+                <h2 class="dish-name">九节板</h2>
+                <p class="dish-description">
+                  八角盘中盛放八种配菜，用面糊薄煎成饼包裹食用的料理 <br>
+                  色彩缤纷的宫廷料理
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image"></div>
+              <div class="menu-content">
+                <div class="dish-name-ko">닭한마리X신선로</div>
+                <h2 class="dish-name">整鸡✖神仙炉</h2>
+                <p class="dish-description">
+                  将整鸡（白切鸡）拆解后与鲍鱼、配料等一起盛入神仙炉火锅，<br>
+                  倒入长时间熬制的高汤，享受“人生一次的火锅”般的奢华时光
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="food-image">
+                <img src="menu_baeksuk.jpg" alt="백숙" loading="lazy" decoding="async" />
+              </div>
+              <div class="menu-content">
+                <div class="dish-name-ko">백숙</div>
+                <h2 class="dish-name">韩方白切鸡</h2>
+                <p class="dish-description">
+                  整鸡加入高丽参、栗子、红枣等药材慢炖的“忘却时间的火锅” <br>
+                  整鸡切块也可做成东大门鸡锅
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
     <footer>
         <div class="container">
             <p class="footer-text"></p>
